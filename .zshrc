@@ -89,3 +89,4 @@ eval "$(direnv hook zsh)"
 ZSH_THEME="agnoster"
 source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh-highlight/zsh-syntax-highlighting.zsh
+export PYTHONSTARTUP=~/.pythonrc.py
