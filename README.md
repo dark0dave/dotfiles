@@ -14,7 +14,7 @@ Press prefix + I (capital I, as in Install) to install new plugins.
 
 ## zsh
 
-Remmeber to install zsh and direnv
+Remmeber to install zsh, oh-my-zsh and direnv
 
 And zsh-autosuggestions
 ```bash
