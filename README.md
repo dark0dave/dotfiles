@@ -14,7 +14,19 @@ Press prefix + I (capital I, as in Install) to install new plugins.
 
 ## zsh
 
-Remmeber to install zsh, oh-my-zsh and direnv
+Remmeber to install zsh, oh-my-zsh, powerline fonts and direnv
+
+powerline fonts
+```bash
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+```
 
 And zsh-autosuggestions
 ```bash
