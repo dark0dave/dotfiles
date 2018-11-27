@@ -1,38 +1,25 @@
 # myDotFiles
 
-My Dot files, for zsh. tmux and vim
+My Dot files, for zsh. tmux and vim.
+This repo if for macos and linux only.
 
-## tmux
+## Setup
 
-Remmeber to install tmux plugin manager
+Ensure, you have installed:
+* zsh
+* curl
+* direnv
+* jenv
+* vim,
+* python
+* tmux
 
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+Clone with:
+```
+git clone https://gitlab.com:dark0dave/myDotFiles ${HOME}/.myDotFiles
 ```
 
-Press prefix + I (capital I, as in Install) to install new plugins.
-
-## zsh
-
-Remmeber to install zsh, oh-my-zsh, powerline fonts and direnv
-
-powerline fonts
-```bash
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
+To start using my dotfiles, run:
+```
 ./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
-```
-
-And zsh-autosuggestions
-```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-highlight
-```
-And zsh-highlight
-```bash
-git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh-autosuggestions
 ```
