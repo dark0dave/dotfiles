@@ -16,6 +16,7 @@ gitSetup() {
   git config --global user.name $gitusername
   read -p "Enter your email address for github: " gitemail
   git config --global user.email $gitemail
+  git config --global core.editor vim
   # ssh keygen ed25519
   ssh-keygen -t ed25519  -C $gitemail -f gitlab
   ssh-add ~/.ssh/gitlab
