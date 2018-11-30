@@ -23,3 +23,7 @@ To start using my dotfiles, run:
 ```
 ./install.sh
 ```
+
+## Tmux first time startup
+
+* Press prefix + I (capital I, as in Install) to install all the tmux plugins.

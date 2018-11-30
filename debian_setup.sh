@@ -30,6 +30,7 @@ pythonSetup() {
 }
 
 main() {
+  pythonSetup
   software
   github
 }
