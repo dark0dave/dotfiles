@@ -8,3 +8,5 @@ source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh-highlight/zsh-syntax-highlighting.zsh
 # PythonStartup tab complete
 export PYTHONSTARTUP=~/.pythonrc.py
+# Always share history
+setopt sharehistory
