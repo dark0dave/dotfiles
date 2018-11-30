@@ -1,11 +1,12 @@
 # myDotFiles
 
 My Dot files, for zsh. tmux and vim.
-This repo if for macos and linux only.
+This repo is for macos and linux only.
 
 ## Setup
 
 Ensure, you have installed:
+* [git](https://en.wikipedia.org/wiki/git): Is a distributed version-control system for tracking code changes
 * [zsh](https://en.wikipedia.org/wiki/Z_shell): More pleasant shell experience
 * [curl](https://en.wikipedia.org/wiki/CURL): A useful tool for fetching web content
 * [direnv](https://github.com/direnv/direnv/blob/master/README.md): Manage your environment variables by folder
