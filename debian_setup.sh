@@ -3,10 +3,10 @@ set -eo pipefail
 
 software() {
   echo "Installing software"
-  # Openvpn because we like privacy
-  sudo apt-get install openvpn
+  # Update apt
+  apt-get update && apt-get -y upgrade
   # Utilies
-  sudo apt-get install zsh tmux vim git curl direnv
+  apt-get install git zsh tmux vim git curl direnv openvpn -y
   chsh -s /bin/zsh
 }
 
@@ -24,15 +24,15 @@ gitSetup() {
 
 pythonSetup() {
   echo "Python setup"
-  sudo apt-get install python python3 python-pip python3-pip
+  apt-get install python python3 python-setuptools -y
+  easy_install pip
   # Pipenv to make python development bearable
   pip install pipenv
 }
 
 main() {
-  pythonSetup
   software
-  github
+  pythonSetup
 }
 
 main
