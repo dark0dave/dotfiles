@@ -13,7 +13,7 @@ source ~/.zsh-highlight/zsh-syntax-highlighting.zsh
 export PYTHONSTARTUP=~/.pythonrc.py
 
 # nvm
-export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Always share history
