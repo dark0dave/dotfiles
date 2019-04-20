@@ -17,7 +17,7 @@ Ensure, you have installed:
 
 Clone with:
 ```
-git clone https://gitlab.com:dark0dave/myDotFiles ${HOME}/.myDotFiles
+git clone https://gitlab.com:dark0dave/myDotFiles.git ${HOME}/.myDotFiles
 ```
 
 To start using my dotfiles, run:
