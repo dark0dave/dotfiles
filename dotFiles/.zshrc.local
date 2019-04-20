@@ -1,12 +1,20 @@
 # jEnv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
 # Direnv
 eval "$(direnv hook zsh)"
+
 # Zsh suggestions and highlighting
 source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh-highlight/zsh-syntax-highlighting.zsh
+
 # PythonStartup tab complete
 export PYTHONSTARTUP=~/.pythonrc.py
+
+# nvm
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Always share history
 setopt sharehistory
