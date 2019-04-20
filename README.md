@@ -14,6 +14,7 @@ Ensure, you have installed:
 * [vim](https://www.vim.org/about.php): Text editor
 * [python](https://en.wikipedia.org/wiki/Python_(programming_language)): A programming language
 * [tmux](https://en.wikipedia.org/wiki/Tmux): A multi-window terminal emulator
+* [nvm](https://github.com/creationix/nvm): Manage your node version, in a reasonable way
 
 Clone with:
 ```
