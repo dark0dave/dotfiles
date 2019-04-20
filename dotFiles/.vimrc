@@ -3,8 +3,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'dracula/dracula-theme'
 
 Plugin 'scrooloose/nerdtree'
@@ -20,7 +18,9 @@ filetype plugin indent on    " required
 
 set updatetime=100
 set tabstop=2
+set shiftwidth=2
 set expandtab
+retab
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE

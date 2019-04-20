@@ -32,7 +32,8 @@ linkDotFiles() {
 }
 
 setupVim() {
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  [[ ! -d ${HOME}/.vim/bundle/Vundle.vim ]] && \
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
   vim +PluginInstall +qall
 }
 
