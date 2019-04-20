@@ -31,10 +31,16 @@ linkDotFiles() {
     && echo "source ${HOME}/.zshrc.local" >> ${HOME}/.zshrc
 }
 
+setupVim() {
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+}
+
 main() {
   setupZsh
   setupTmux
   linkDotFiles
+  setupVim
 }
 
 main
