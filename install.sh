@@ -28,7 +28,7 @@ linkDotFiles() {
     backUpAndLink ${HOME}/${file} ${dotFilesFolder}/${file};
   done
   sed "s|source ${HOME}/.zshrc.local||g" ${HOME}/.zshrc 1>/dev/null \
-    || echo "source ${HOME}/.zshrc.local" >> ${HOME}/.zshrc
+    && echo "source ${HOME}/.zshrc.local" >> ${HOME}/.zshrc
 }
 
 main() {
