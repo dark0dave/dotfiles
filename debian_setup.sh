@@ -24,8 +24,7 @@ gitSetup() {
 
 pythonSetup() {
   echo "Python setup"
-  apt-get install python python3 python-setuptools -y
-  easy_install pip
+  apt-get install python python3.7 python-setuptools python-pip -y
   # Pipenv to make python development bearable
   pip install pipenv
 }
