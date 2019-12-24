@@ -12,9 +12,21 @@ source ~/.zsh-highlight/zsh-syntax-highlighting.zsh
 # PythonStartup tab complete
 export PYTHONSTARTUP=~/.pythonrc.py
 
-# nvm
-export NVM_DIR="${HOME}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 # Always share history
 setopt sharehistory
+
+# node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
+
+# Rust Setup
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# Global opt out
+# See https://consoledonottrack.com/
+export DO_NOT_TRACK=1
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Aliases
+alias pbcopy='xclip -selection clipboard'
