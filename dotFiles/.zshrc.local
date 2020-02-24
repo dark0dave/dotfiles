@@ -30,3 +30,13 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Aliases
 alias pbcopy='xclip -selection clipboard'
+export PATH="$HOME/.pyenv/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
