@@ -11,8 +11,8 @@ setupPowerline() {
 setupZsh() {
   [[ ! -d ${HOME}/.oh-my-zsh ]] && \
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  ifDirDoesNotExistRun ${HOME}/.zsh-highlight \
-    'git clone https://github.com/zsh-users/zsh-syntax-highlighting'
+  ifDirDoesNotExistRun ${HOME}/.fast-syntax-highlighting \
+    'git clone https://github.com/zdharma/fast-syntax-highlighting'
   ifDirDoesNotExistRun ${HOME}/.zsh-autosuggestions \
     'git clone https://github.com/zsh-users/zsh-autosuggestions'
 }

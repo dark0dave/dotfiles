@@ -7,7 +7,7 @@ eval "$(direnv hook zsh)"
 
 # Zsh suggestions and highlighting
 source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh-highlight/zsh-syntax-highlighting.zsh
+source ~/.fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # PythonStartup tab complete
 export PYTHONSTARTUP=~/.pythonrc.py
@@ -30,6 +30,8 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Aliases
 alias pbcopy='xclip -selection clipboard'
+
+# Python
 export PATH="$HOME/.pyenv/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
@@ -45,3 +47,5 @@ source /home/x/.gvm/scripts/gvm
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# Flutter
+export PATH="${PATH}:${HOME}/.flutter/bin"
