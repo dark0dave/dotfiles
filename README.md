@@ -15,6 +15,8 @@ Ensure, you have installed:
 * [python](https://en.wikipedia.org/wiki/Python_(programming_language)): A programming language
 * [tmux](https://en.wikipedia.org/wiki/Tmux): A multi-window terminal emulator
 * [nvm](https://github.com/creationix/nvm): Manage your node version, in a reasonable way
+* [gvm](https://github.com/moovweb/gvm): Golang Version Manager
+* [rust](https://www.rust-lang.org/tools/install): A language empowering everyone to build reliable and efficient software. 
 
 Clone with:
 ```
