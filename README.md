@@ -8,7 +8,6 @@ This repo is for macos and linux only.
 Ensure, you have installed:
 * [git](https://en.wikipedia.org/wiki/git): Is a distributed version-control system for tracking code changes
 * [zsh](https://en.wikipedia.org/wiki/Z_shell): More pleasant shell experience
-* [zim](https://github.com/zimfw/zimfw): Zim is a Zsh configuration framework
 * [curl](https://en.wikipedia.org/wiki/CURL): A useful tool for fetching web content
 * [direnv](https://github.com/direnv/direnv/blob/master/README.md): Manage your environment variables by folder
 * [vim](https://www.vim.org/about.php): Text editor

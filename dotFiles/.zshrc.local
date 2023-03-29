@@ -15,7 +15,6 @@ setopt incappendhistory  #Immediately append to the history file, not just when 
 export DO_NOT_TRACK=1
 # Fuck MS
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export PATH=/home/x/bin:$PATH
 # Aliases
 alias pbcopy='xclip -selection clipboard'
 alias weather='curl "https://wttr.in/?format=4"'
@@ -33,4 +32,3 @@ eval "$(rtx activate zsh)"
 
 # Python
 export PYTHONSTARTUP=~/.pythonrc.py
-
