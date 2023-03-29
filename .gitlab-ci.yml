@@ -1,9 +1,0 @@
-image: debian:stable-slim
-
-test:
-  stage: test
-  script: export HOME=/root &&
-    cp -R ../myDotFiles ${HOME}/.myDotFiles &&
-    cd ${HOME}/.myDotFiles &&
-    ./debian_setup.sh &&
-    ./install.sh

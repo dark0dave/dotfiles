@@ -8,15 +8,13 @@ This repo is for macos and linux only.
 Ensure, you have installed:
 * [git](https://en.wikipedia.org/wiki/git): Is a distributed version-control system for tracking code changes
 * [zsh](https://en.wikipedia.org/wiki/Z_shell): More pleasant shell experience
+* [zim](https://github.com/zimfw/zimfw): Zim is a Zsh configuration framework
 * [curl](https://en.wikipedia.org/wiki/CURL): A useful tool for fetching web content
 * [direnv](https://github.com/direnv/direnv/blob/master/README.md): Manage your environment variables by folder
-* [jenv](https://github.com/gcuisinier/jenv/blob/master/README.md): Manage your java versions better
 * [vim](https://www.vim.org/about.php): Text editor
-* [python](https://en.wikipedia.org/wiki/Python_(programming_language)): A programming language
 * [tmux](https://en.wikipedia.org/wiki/Tmux): A multi-window terminal emulator
-* [nvm](https://github.com/creationix/nvm): Manage your node version, in a reasonable way
-* [gvm](https://github.com/moovweb/gvm): Golang Version Manager
-* [rust](https://www.rust-lang.org/tools/install): A language empowering everyone to build reliable and efficient software. 
+* [rust](https://www.rust-lang.org/tools/install): A language empowering everyone to build reliable and efficient software.
+* [rtx](https://github.com/jdxcode/rtx): A version manager for multiple programming langauges
 
 Clone with:
 ```

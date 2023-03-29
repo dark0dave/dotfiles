@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eo pipefail
-source ${HOME}/.myDotFiles/util.sh
+
+SCRIPT_DIR=$( dirname "$0" );
+source ${SCRIPT_DIR}/util.sh
 
 setupPowerline() {
   git clone https://github.com/powerline/fonts.git --depth=1
@@ -19,7 +21,7 @@ setupTmux() {
 }
 
 linkDotFiles() {
-  local dotFilesFolder=${HOME}/.myDotFiles/dotFiles
+  local dotFilesFolder=${SCRIPT_DIR}/dotFiles
   for file in $(ls -A ${dotFilesFolder}/. | awk -F "/" '{print $NF}' ); do
     backUpAndLink "${HOME}/${file}" "${dotFilesFolder}/${file}"
   done
