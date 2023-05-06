@@ -4,17 +4,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'dracula/dracula-theme'
-
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
 Plugin 'tpope/vim-sensible'
 Plugin 'airblade/vim-gitgutter'
-
 Plugin 'valloric/youcompleteme'
+
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set mouse=a
 set updatetime=100
 set tabstop=2
 set shiftwidth=2
@@ -32,3 +31,13 @@ let g:gitgutter_highlight_lines = 1
 let g:gitgutter_enabled = 1
 
 autocmd StdinReadPre * let s:std_in=1
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 17.5
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
