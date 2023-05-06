@@ -4,6 +4,10 @@ local config = wezterm.config_builder()
 
 -- Config
 config.enable_scroll_bar = true
+config.scrollback_lines = 5000000
+config.colors = {}
+config.colors.scrollbar_thumb = 'white'
+
 config.color_scheme = 'tokyonight_night'
 config.font = wezterm.font_with_fallback {
   'Roboto Mono for Powerline',

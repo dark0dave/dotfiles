@@ -20,6 +20,7 @@ alias pbcopy='xclip -selection clipboard'
 alias weather='curl "https://wttr.in/?format=4"'
 alias ls=lsd
 alias cat=bat
+alias yt='ytfzf -t'
 
 # Direnv
 eval "$(direnv hook zsh)"
@@ -32,9 +33,3 @@ eval "$(rtx activate zsh)"
 
 # Python
 export PYTHONSTARTUP=~/.pythonrc.py
-export PATH=$PATH:/home/x/.local/bin
-
-source '/home/x/.azure-cli/az.completion'
-
-alias docker=podman
-
