@@ -28,6 +28,7 @@ alias cat=bat
 eval "$(direnv hook zsh)"
 
 # RTX
+ASDF_RUBY_BUILD_VERSION=master
 eval "$(rtx activate zsh)"
 
 # Python
