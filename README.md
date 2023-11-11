@@ -1,4 +1,6 @@
-# myDotFiles
+# DotFiles
+
+![](public/icon/icon.png)
 
 My Dot files, for zsh. tmux and vim.
 This repo is for macos and linux only.
@@ -17,12 +19,23 @@ Ensure, you have installed:
 * [wezterm](https://github.com/wez/wezterm): A GPU-accelerated cross-platform terminal emulator and multiplexer 
 
 Clone with:
+
+```sh
+git clone https://github.com:dark0dave/dotFiles.git
 ```
-git clone https://gitlab.com:dark0dave/myDotFiles.git ${HOME}/.myDotFiles
+
+or use a mirror:
+```sh
+git clone https://gitlab.com:dark0dave/dotFiles.git
+```
+
+or another mirror
+```sh
+git clone https://git.sr.ht/~dark0dave/dotfiles
 ```
 
 To start using my dotfiles, run:
-```
+```sh
 ./install.sh
 ```
 

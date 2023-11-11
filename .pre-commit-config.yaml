@@ -13,6 +13,10 @@ repos:
     rev: 3.0.0
     hooks:
       - id: forbid-binary
+        exclude: >
+            (?x)^(
+              public/icons/.*
+            )$
       - id: git-dirty
       - id: shellcheck
 
