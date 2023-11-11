@@ -22,7 +22,8 @@ setupTmux() {
 
 linkDotFiles() {
   local dotFilesFolder=${SCRIPT_DIR}/dotFiles
-  for file in $(find "${dotFilesFolder}" -name ".*" | awk -F "/" '{print $NF}' ); do
+  local -r dotFilesToInstall=$(find "${dotFilesFolder}" -name ".*" -type f -printf "%f\n")
+  for file in ${dotFilesToInstall}; do
     backUpAndLink "${HOME}/${file}" "${dotFilesFolder}/${file}"
   done
   sed -i "s|source ${HOME}/.zshrc.local||g" "${HOME}"/.zshrc 1>/dev/null \
