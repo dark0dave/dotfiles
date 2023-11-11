@@ -11,9 +11,10 @@ Ensure, you have installed:
 * [curl](https://en.wikipedia.org/wiki/CURL): A useful tool for fetching web content
 * [direnv](https://github.com/direnv/direnv/blob/master/README.md): Manage your environment variables by folder
 * [vim](https://www.vim.org/about.php): Text editor
+* [helix](https://github.com/helix-editor/helix): A post-modern modal text editor.
 * [tmux](https://en.wikipedia.org/wiki/Tmux): A multi-window terminal emulator
-* [rust](https://www.rust-lang.org/tools/install): A language empowering everyone to build reliable and efficient software.
 * [rtx](https://github.com/jdxcode/rtx): A version manager for multiple programming langauges
+* [wezterm](https://github.com/wez/wezterm): A GPU-accelerated cross-platform terminal emulator and multiplexer 
 
 Clone with:
 ```
