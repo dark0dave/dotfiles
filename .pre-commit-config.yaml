@@ -1,0 +1,29 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: forbid-new-submodules
+      - id: check-builtin-literals
+
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+      - id: forbid-binary
+      - id: git-dirty
+      - id: shellcheck
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.4
+    hooks:
+      - id: forbid-crlf
+      - id: remove-crlf
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: 3.8.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]

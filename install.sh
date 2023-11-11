@@ -2,7 +2,7 @@
 set -eo pipefail
 
 SCRIPT_DIR=$( dirname "$0" );
-source ${SCRIPT_DIR}/util.sh
+source "${SCRIPT_DIR}"/util.sh
 
 setupPowerline() {
   git clone https://github.com/powerline/fonts.git --depth=1
@@ -22,17 +22,17 @@ setupTmux() {
 
 linkDotFiles() {
   local dotFilesFolder=${SCRIPT_DIR}/dotFiles
-  for file in $(ls -A ${dotFilesFolder}/. | awk -F "/" '{print $NF}' ); do
+  for file in $(find "${dotFilesFolder}" -name ".*" | awk -F "/" '{print $NF}' ); do
     backUpAndLink "${HOME}/${file}" "${dotFilesFolder}/${file}"
   done
-  sed -i "s|source ${HOME}/.zshrc.local||g" ${HOME}/.zshrc 1>/dev/null \
-    && echo "source ${HOME}/.zshrc.local" >> ${HOME}/.zshrc
+  sed -i "s|source ${HOME}/.zshrc.local||g" "${HOME}"/.zshrc 1>/dev/null \
+    && echo "source ${HOME}/.zshrc.local" >> "${HOME}"/.zshrc
 }
 
 setupVim() {
   local vundleLocation=${HOME}/.vim/bundle/Vundle.vim
   [[ ! -d ${vundleLocation} ]] && \
-    git clone https://github.com/VundleVim/Vundle.vim.git ${vundleLocation}
+    git clone https://github.com/VundleVim/Vundle.vim.git "${vundleLocation}"
   vim +PluginInstall +qall
 }
 
