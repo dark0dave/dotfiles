@@ -40,5 +40,5 @@ zmodule zsh-users/zsh-history-substring-search
 # }}} End configuration added by Zim install
 
 
-zmodule known
+zmodule dark0dave/known
 

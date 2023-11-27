@@ -1,15 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR=$( dirname "$0" );
+SCRIPT_DIR=$( dirname $(readlink -f "$0") );
 
-backUpAndLink() {
-  date=$(date +%s)
-  echo "Linking $2 to $1 with date: $date"
-  [[ -f ${1} ]] && mv "${1}" "${1}"."${date}"
-  [[ -h ${1} ]] && rm "${1}"
-  ln -s "${2}" "${1}"
-}
 
 checkForBinaries() {
   which zsh git curl vim tmux >/dev/null  || echo "Missing binaries"
@@ -37,7 +30,8 @@ linkDotFiles() {
   local dotFilesFolder=${SCRIPT_DIR}/dotFiles
   local -r dotFilesToInstall=$(find "${dotFilesFolder}" -name ".*" -type f -printf "%f\n")
   for file in ${dotFilesToInstall}; do
-    backUpAndLink "${HOME}/${file}" "${dotFilesFolder}/${file}"
+    echo "Copying ${dotFilesFolder}/${file} to ${HOME}/${file}"
+    cp "${dotFilesFolder}/${file}" "${HOME}/${file}"
   done
   sed -i "s|source ${HOME}/.zshrc.local||g" "${HOME}"/.zshrc 1>/dev/null \
     && echo "source ${HOME}/.zshrc.local" >> "${HOME}"/.zshrc
@@ -45,6 +39,7 @@ linkDotFiles() {
 
 main() {
   checkForBinaries
+  setupPowerline
   setupZsh
   setupTmux
   linkDotFiles
