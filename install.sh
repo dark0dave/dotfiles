@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
-set -eo pipefail
+set -euo pipefail
 
 SCRIPT_DIR=$( dirname "$0" );
-source "${SCRIPT_DIR}"/util.sh
+
+backUpAndLink() {
+  date=$(date +%s)
+  echo "Linking $2 to $1 with date: $date"
+  [[ -f ${1} ]] && mv "${1}" "${1}"."${date}"
+  [[ -h ${1} ]] && rm "${1}"
+  ln -s "${2}" "${1}"
+}
+
+checkForBinaries() {
+  which zsh git curl vim tmux >/dev/null  || echo "Missing binaries"
+}
 
 setupPowerline() {
   git clone https://github.com/powerline/fonts.git --depth=1
@@ -11,13 +22,15 @@ setupPowerline() {
 }
 
 setupZsh() {
-  [[ ! -d ${HOME}/.zim ]] && \
+  if [ ! -d ${HOME}/.zim ]; then
     curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+  fi
 }
 
 setupTmux() {
-  ifDirDoesNotExistRun "${HOME}/.tmux/plugins/tpm" \
+  if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then 
     git clone https://github.com/tmux-plugins/tpm "${HOME}/.tmux/plugins/tpm"
+  fi
 }
 
 linkDotFiles() {
@@ -30,18 +43,11 @@ linkDotFiles() {
     && echo "source ${HOME}/.zshrc.local" >> "${HOME}"/.zshrc
 }
 
-setupVim() {
-  local vundleLocation=${HOME}/.vim/bundle/Vundle.vim
-  [[ ! -d ${vundleLocation} ]] && \
-    git clone https://github.com/VundleVim/Vundle.vim.git "${vundleLocation}"
-  vim +PluginInstall +qall
-}
-
 main() {
+  checkForBinaries
   setupZsh
   setupTmux
   linkDotFiles
-  setupVim
 }
 
 main
