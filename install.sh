@@ -5,7 +5,7 @@ SCRIPT_DIR=$( dirname $(readlink -f "$0") );
 
 
 checkForBinaries() {
-  which zsh git curl vim tmux >/dev/null  || echo "Missing binaries"
+  which zsh git curl tmux >/dev/null  || echo "Missing binaries"
 }
 
 setupPowerline() {

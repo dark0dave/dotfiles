@@ -1,0 +1,12 @@
+[tools]
+ant = "latest"
+bun = "latest"
+go = "latest"
+java = "17"
+node = "latest"
+opam = "2.1.4"
+python = "3.12"
+ruby = "latest"
+rust = "latest"
+opentofu = "latest"
+zig = "latest"

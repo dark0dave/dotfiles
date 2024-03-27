@@ -27,21 +27,17 @@ alias cat=bat
 # Direnv
 eval "$(direnv hook zsh)"
 
-# RTX
+# mise
 ASDF_RUBY_BUILD_VERSION=master
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
+PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # Python
-PYTHONSTARTUP=~/.pythonrc.py
+PYTHONSTARTUP=$HOME/.pythonrc.py
 
 # Bin files
-PATH=$PATH:/home/x/.local/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/projects/bg_mods/tools/weidu:$HOME/.steam/steam/compatibilitytools.d/latest/files/bin
+PATH=$PATH:/opt/**/
 
-# GCLOUD
-PATH=$PATH:/opt/google-cloud-sdk/bin
-# gcloud config set disable_usage_reporting true >/dev/null
-
-# Cuda
-PATH="/usr/local/cuda/bin:$PATH"
-LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-
+alias docker=podman
+alias docker-compose=podman-compose

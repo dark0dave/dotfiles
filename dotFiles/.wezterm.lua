@@ -1,12 +1,8 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
--- https://github.com/wez/wezterm/issues/4323
--- https://github.com/wez/wezterm/issues/3214
--- nvidia linux settings
-config.front_end = 'WebGpu'
-
 -- Config
+config.audible_bell = Disabled
 config.enable_scroll_bar = true
 config.scrollback_lines = 5000000
 config.colors = {}
@@ -17,6 +13,7 @@ config.font = wezterm.font_with_fallback {
   'Roboto Mono for Powerline',
   'Fira Code',
 }
+config.font_size = 16.0
 
 config.window_background_opacity = 0.75
 config.line_height = 1
@@ -29,6 +26,7 @@ config.window_padding = {
 }
 
 config.hide_tab_bar_if_only_one_tab = true
+config.window_decorations = "RESIZE"
 -- https://wezfurlong.org/wezterm/config/default-keys.html?h=key
 config.disable_default_key_bindings = true
 config.keys = {
@@ -42,6 +40,7 @@ config.keys = {
   { key = ']', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(1) },
   { key = '+', mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
   { key = '_', mods = 'CTRL|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+  { key = '"', mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
   { key = 'z', mods = 'CTRL', action = wezterm.action.TogglePaneZoomState },
   { key = 'UpArrow', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection("Up") },
   { key = 'DownArrow', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection("Down") },
