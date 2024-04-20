@@ -1,0 +1,17 @@
+[settings]
+experimental = true
+[tools]
+elixir = "latest"
+go = "latest"
+helm = "3.11.3"
+java = "17"
+maven = "3.6.3"
+node = "latest"
+opam = "2.1.4"
+python = "3.12.1"
+ruby = "3.2.2"
+rust = "latest"
+sbt = "1.4.9"
+opentofu = "latest"
+terragrunt = "latest"
+zig = "latest"

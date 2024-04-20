@@ -19,7 +19,7 @@ DO_NOT_TRACK=1
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 AZURE_CORE_COLLECT_TELEMETRY=0
 # Aliases
-alias pbcopy='xclip -selection clipboard'
+alias pbcopy='xclip -sel clip'
 alias weather='curl "https://wttr.in/?format=4"'
 alias ls=lsd
 alias cat=bat
@@ -27,10 +27,10 @@ alias cat=bat
 # Direnv
 eval "$(direnv hook zsh)"
 
-# mise
+# Mise
+PATH="/home/x/.local/share/mise/shims:$PATH"
 ASDF_RUBY_BUILD_VERSION=master
 eval "$(mise activate zsh)"
-PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # Python
 PYTHONSTARTUP=$HOME/.pythonrc.py
@@ -39,5 +39,6 @@ PYTHONSTARTUP=$HOME/.pythonrc.py
 PATH=$PATH:$HOME/.local/bin:$HOME/projects/bg_mods/tools/weidu:$HOME/.steam/steam/compatibilitytools.d/latest/files/bin
 PATH=$PATH:/opt/**/
 
-alias docker=podman
-alias docker-compose=podman-compose
+# BG stuff
+PATH="$PATH:$HOME/projects/bg_mods/tools/weidu"
+

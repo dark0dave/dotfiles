@@ -2,20 +2,22 @@
 
 ![](public/icon/icon.png)
 
-My Dot files, for zsh. tmux and vim.
 This repo is for macos and linux only.
 
 ## Setup
 
 Ensure, you have installed:
+* (stow)[https://www.gnu.org/software/stow/]: Which is symlink farm manager
 * [git](https://en.wikipedia.org/wiki/git): Is a distributed version-control system for tracking code changes
 * [zsh](https://en.wikipedia.org/wiki/Z_shell): More pleasant shell experience
+* [zim](https://github.com/zimfw/zimfw): Modular, customizable, and blazing fast Zsh framework 
 * [curl](https://en.wikipedia.org/wiki/CURL): A useful tool for fetching web content
 * [direnv](https://github.com/direnv/direnv/blob/master/README.md): Manage your environment variables by folder
-* [vim](https://www.vim.org/about.php): Text editor
+* [powerline](https://github.com/powerline/fonts.git): Powerline fonts
 * [helix](https://github.com/helix-editor/helix): A post-modern modal text editor.
 * [tmux](https://en.wikipedia.org/wiki/Tmux): A multi-window terminal emulator
-* [rtx](https://github.com/jdxcode/rtx): A version manager for multiple programming langauges
+* [tpm](https://github.com/tmux-plugins/tpm): Tmux package manager
+* [mise](https://github.com/jdx/mise): A version manager for multiple programming langauges
 * [wezterm](https://github.com/wez/wezterm): A GPU-accelerated cross-platform terminal emulator and multiplexer 
 
 Clone with:
@@ -34,9 +36,9 @@ or another mirror
 git clone https://git.sr.ht/~dark0dave/dotfiles
 ```
 
-To start using my dotfiles, run:
+To install my dotfiles, use stow:
 ```sh
-./install.sh
+stow --target=$HOME */
 ```
 
 ## Tmux first time startup
