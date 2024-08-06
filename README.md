@@ -1,6 +1,6 @@
 # DotFiles
 
-![](public/icon/icon.png)
+![](./public/icon/icon.png)
 
 This repo is for macos and linux only.
 
@@ -36,23 +36,20 @@ or another mirror
 git clone https://git.sr.ht/~dark0dave/dotfiles
 ```
 
-To install my dotfiles, use stow:
-```sh
-stow --target=$HOME */
-```
+## Installation
 
 You can install one of my dotfiles with:
 ```sh
 stow --adopt --target=$HOME <foldername>
 ```
-Where <foldername> is the name of dotfile you'd like to install (alacritty, firefox, mise, python, tmux, wezterm, zim)
+Where `<foldername>` is the name of dotfile you'd like to install (alacritty, firefox, mise, python, tmux, wezterm, zim)
 
 Do note for firefox, some more configuration will be required.
 
 ```sh
 stow --adopt --target=$HOME/.mozilla/firefox/<yourprofile>default-release firefox
 ```
-Fill in <yourprofile>.
+Fill in `<yourprofile>`.
 
 ## Tmux first time startup
 
