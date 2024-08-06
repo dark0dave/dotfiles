@@ -6,16 +6,17 @@ config.audible_bell = Disabled
 config.enable_scroll_bar = true
 config.scrollback_lines = 5000000
 config.colors = {}
-config.colors.scrollbar_thumb = 'white'
+config.colors.scrollbar_thumb = "white"
 
 config.color_scheme = 'tokyonight_night'
-config.font = wezterm.font_with_fallback {
-  'Roboto Mono for Powerline',
-  'Fira Code',
-}
-config.font_size = 16.0
+config.font = wezterm.font('Roboto Mono for Powerline', { 
+  weight = "Light",
+  stretch = "Normal",
+  italic = false,
+})
+config.font_size = 20.0
 
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.95
 config.line_height = 1
 
 config.window_padding = {
@@ -25,7 +26,7 @@ config.window_padding = {
   bottom = '0.1cell',
 }
 
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.window_decorations = "RESIZE"
 -- https://wezfurlong.org/wezterm/config/default-keys.html?h=key
 config.disable_default_key_bindings = true

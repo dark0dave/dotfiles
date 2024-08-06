@@ -7,7 +7,7 @@ This repo is for macos and linux only.
 ## Setup
 
 Ensure, you have installed:
-* (stow)[https://www.gnu.org/software/stow/]: Which is symlink farm manager
+* [stow](https://www.gnu.org/software/stow/): Which is symlink farm manager
 * [git](https://en.wikipedia.org/wiki/git): Is a distributed version-control system for tracking code changes
 * [zsh](https://en.wikipedia.org/wiki/Z_shell): More pleasant shell experience
 * [zim](https://github.com/zimfw/zimfw): Modular, customizable, and blazing fast Zsh framework 
@@ -40,6 +40,19 @@ To install my dotfiles, use stow:
 ```sh
 stow --target=$HOME */
 ```
+
+You can install one of my dotfiles with:
+```sh
+stow --adopt --target=$HOME <foldername>
+```
+Where <foldername> is the name of dotfile you'd like to install (alacritty, firefox, mise, python, tmux, wezterm, zim)
+
+Do note for firefox, some more configuration will be required.
+
+```sh
+stow --adopt --target=$HOME/.mozilla/firefox/<yourprofile>default-release firefox
+```
+Fill in <yourprofile>.
 
 ## Tmux first time startup
 
