@@ -170,7 +170,29 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     cmd = "Telescope",
     opts = function()
-      return require "nvchad.configs.telescope"
+      dofile(vim.g.base46_cache .. "telescope")
+      local options = {
+        defaults = {
+          prompt_prefix = "   ",
+          selection_caret = " ",
+          entry_prefix = " ",
+          sorting_strategy = "ascending",
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+              preview_width = 0.55,
+            },
+            width = 0.87,
+            height = 0.80,
+          },
+          mappings = {
+            n = { ["q"] = require("telescope.actions").close },
+          },
+        },
+        extensions_list = { "themes", "terms" },
+        extensions = {},
+      }
+      return options
     end,
     config = function(_, opts)
       local telescope = require "telescope"
@@ -205,11 +227,24 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     opts = function()
-      return require "nvchad.configs.treesitter"
+      pcall(function()
+        dofile(vim.g.base46_cache .. "syntax")
+        dofile(vim.g.base46_cache .. "treesitter")
+      end)
+      local options = {
+        ensure_installed = { "lua", "luadoc", "printf", "vim", "vimdoc" },
+        highlight = {
+          enable = true,
+          use_languagetree = true,
+        },
+        indent = { enable = true },
+      }
+      return options
     end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
