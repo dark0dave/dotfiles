@@ -19,6 +19,7 @@ Ensure, you have installed:
 * [tpm](https://github.com/tmux-plugins/tpm): Tmux package manager
 * [mise](https://github.com/jdx/mise): A version manager for multiple programming langauges
 * [wezterm](https://github.com/wez/wezterm): A GPU-accelerated cross-platform terminal emulator and multiplexer 
+* [kitty](https://github.com/kovidgoyal/kitty): The fast, feature-rich, GPU based terminal emulator
 
 Clone with:
 
