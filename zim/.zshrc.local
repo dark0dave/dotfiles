@@ -1,5 +1,9 @@
 set -a
 
+# Bin files
+PATH=$PATH:$HOME/.local/bin:$HOME/projects/bg_mods/tools/weidu:$HOME/.steam/steam/compatibilitytools.d/latest/files/bin
+PATH=$PATH:/opt/**/
+
 # Set editor hx PRAY TO HELIX
 VISUAL=hx
 EDITOR="$VISUAL"
@@ -34,10 +38,6 @@ eval "$(mise activate zsh)"
 
 # Python
 PYTHONSTARTUP=$HOME/.pythonrc.py
-
-# Bin files
-PATH=$PATH:$HOME/.local/bin:$HOME/projects/bg_mods/tools/weidu:$HOME/.steam/steam/compatibilitytools.d/latest/files/bin
-PATH=$PATH:/opt/**/
 
 # BG stuff
 PATH="$PATH:$HOME/projects/bg_mods/tools/weidu"
