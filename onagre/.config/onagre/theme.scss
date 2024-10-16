@@ -1,5 +1,5 @@
 .onagre {
-  --exit-unfocused: false;
+  --exit-unfocused: true;
   height: 250px;
   width: 400px;
   --icon-theme: "Papirus";
@@ -19,6 +19,7 @@
       color: #d8dee9;
       padding: 4px;
       --height: fill-portion 1;
+
       .plugin-hint {
         font-size: 9px;
         color: #bf616a;
@@ -35,11 +36,11 @@
       .input {
         --width: fill-portion 11;
       }
-
     }
 
     .rows {
       --height: fill-portion 5;
+
       .row-selected {
         background: #2E3440;
         color: #ebcb8b;

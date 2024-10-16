@@ -6,6 +6,7 @@ mouse = true
 [editor.whitespace.render]
 space = "all"
 tab = "all"
+line-number = "absolute"
 nbsp = "none"
 nnbsp = "none"
 newline = "none"
