@@ -5,6 +5,7 @@ PATH=$PATH:$HOME/.local/bin:$HOME/projects/bg_mods/tools/weidu:$HOME/.steam/stea
 PATH=$PATH:/opt/**/
 
 # Set editor hx PRAY TO HELIX
+alias hx=helix
 VISUAL=hx
 EDITOR="$VISUAL"
 
