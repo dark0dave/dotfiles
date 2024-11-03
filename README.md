@@ -17,6 +17,7 @@ Ensure, you have installed:
 * [powerline](https://github.com/powerline/fonts.git): Powerline fonts
 * [helix](https://github.com/helix-editor/helix): A post-modern modal text editor.
 * [mise](https://github.com/jdx/mise): A version manager for multiple programming langauges
+* [rofi](https://github.com/davatorium/rofi): A better dbus menu
 #### Pick one of these
 * [wezterm](https://github.com/wez/wezterm): A GPU-accelerated cross-platform terminal emulator and multiplexer 
 * [kitty](https://github.com/kovidgoyal/kitty): The fast, feature-rich, GPU based terminal emulator
