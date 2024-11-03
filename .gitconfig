@@ -1,0 +1,4 @@
+[filter "monitors"]
+  clean = sed '/^monitor =.*$/d'
+  smudge = sed '/^monitor =.*$/d'
+

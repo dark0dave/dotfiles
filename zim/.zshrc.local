@@ -37,6 +37,10 @@ ASDF_RUBY_BUILD_VERSION=master
 eval "$(mise activate zsh)"
 PATH="$HOME/.local/share/mise/shims:$PATH"
 
+# open tofu
+[[ ! -f ${HOME}/.cache/opentofu ]] && mkdir -p "${HOME}/.cache/opentofu"
+TF_PLUGIN_CACHE_DIR="${HOME}/.cache/opentofu"
+
 # Python
 PYTHONSTARTUP=$HOME/.pythonrc.py
 
@@ -44,6 +48,6 @@ alias docker=podman
 alias docker-compose=podman-compose
 alias rename=perl-rename
 
-# QT
-QT_QPA_PLATFORM=xcb
+# QT https://wiki.archlinux.org/title/Wayland#Qt
+QT_QPA_PLATFORM="wayland;xcb"
 
