@@ -150,5 +150,5 @@ configuration {
   }
 }
 
-@theme "/usr/local/share/rofi/themes/Arc-Dark.rasi"
+@theme "~/.local/share/rofi/themes/rounded-nord-dark.rasi"
 
