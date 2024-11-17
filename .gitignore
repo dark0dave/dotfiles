@@ -2,3 +2,4 @@
 *.swp
 git-cliff
 changelog
+hypr/.config/hypr/monitors.conf
