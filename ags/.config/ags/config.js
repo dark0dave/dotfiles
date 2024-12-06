@@ -1,9 +1,9 @@
 import GLib from "gi://GLib"
 
 
-const entry = `${App.configDir}/main.js`
+const entry = `${App.configDir}/main.ts`
 const build = `${App.configDir}/build`
-const main = `${build}/main.js`
+const main = `${App.configDir}/build/main.js`
 const bundler = GLib.getenv("AGS_BUNDLER") || "bun"
 
 const v = {
