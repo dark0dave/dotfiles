@@ -12,6 +12,9 @@ parserOptions:
 root: true
 ignorePatterns:
   - types/
+  - build/
+  - node_modules/
+  - asztal/
 plugins:
   - "@typescript-eslint"
 rules:
@@ -19,8 +22,6 @@ rules:
     - "off"
   "@typescript-eslint/no-non-null-assertion":
     - "off"
-  # "@typescript-eslint/no-explicit-any":
-  #   - "off"
   "@typescript-eslint/no-unused-vars":
     - error
     - varsIgnorePattern: (^unused|_$)

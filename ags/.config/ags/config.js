@@ -12,7 +12,7 @@ const v = {
 }
 
 try {
-    Utils.ensureDirectory(build);
+    Utils.ensureDirectory(build)
     switch (bundler) {
         case "bun": await Utils.execAsync([
             "bun", "build", entry,

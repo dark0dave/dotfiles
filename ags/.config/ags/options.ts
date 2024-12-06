@@ -125,7 +125,7 @@ const options = mkOptions(OPTIONS, {
         },
         systray: {
             ignore: opt([
-                "KDE Connect Indicator"
+                "KDE Connect Indicator",
             ]),
         },
         media: {
@@ -157,9 +157,9 @@ const options = mkOptions(OPTIONS, {
             favorites: opt([
                 [
                     "firefox",
-                    "wezterm",
-                    "org.gnome.Nautilus",
-                    "org.gnome.Calendar"
+                    "kitty",
+                    "dolphin",
+                    "evolution",
                 ],
             ]),
         },
