@@ -1,0 +1,135 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "custom/arch",
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "tray"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/playerctl"
+  ],
+  "modules-right": [
+    "custom/weather",
+    "battery",
+    "custom/network",
+    "pulseaudio/slider",
+    "pulseaudio"
+  ],
+  "custom/arch": {
+    "format": " 🐧",
+    "on-click": "rofi -show drun"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+    },
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    }
+  },
+  "clock": {
+    "format": "<span color='#b69bf1'>  </span>{:%c}"
+  },
+  "battery": {
+    "format": "<span color='#a8cd76'>{icon}</span> {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-charging": "<span color='#a8cd76'></span> {capacity}%"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 80,
+    "orientation": "horizontal"
+  },
+  "pulseaudio": {
+    "on-click": "pavucontrol",
+    "format": "<span color='#f7768e'></span> {volume}%",
+    "format-muted": "<span color='#f7768e'>ﱝ</span>",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "奔",
+        "墳"
+      ]
+    }
+  },
+  "memory": {
+    "format": "<span foreground='#9ece6a'>🎟</span> {}%",
+    "on-click": "kitty htop"
+  },
+  "tray": {
+    "icon-size": 20,
+    "reverse-direction": true,
+    "show-passive-items": true,
+    "spacing": 6
+  },
+  "cpu": {
+    "format": "<span foreground='#ff005f'></span>  {usage}%"
+  },
+  "custom/network": {
+    "format": "<span>{}</span>",
+    "max-length": 55,
+    "exec": "curl 'https://am.i.mullvad.net/json' 2>/dev/null | jq -r .ip",
+    "on-click": "mullvad-vpn"
+  },
+  "custom/weather": {
+    "format": "<span color='#b69bf1'>{}</span>",
+    "alt-format": "{}",
+    "max-length": 55,
+    "exec": "curl 'https://wttr.in/London?format=%l:+%c+%t' 2>/dev/null",
+    "on-click": "xdg-open https://wttr.in/"
+  },
+  "custom/playerctl": {
+    "format": "{icon}  <span>{1}:{0}</span>  {icon}",
+    "return-type": "json",
+    "max-length": 55,
+    "exec": "playerctl -a metadata --format '{\"text\": \"  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F 2>/dev/null",
+    "on-click-middle": "playerctl previous",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "format-icons": {
+      "Paused": "<span foreground='#bb9af7'>⏸</span>",
+      "Playing": "<span foreground='#bb9af7'>♫</span>"
+    }
+  }
+}

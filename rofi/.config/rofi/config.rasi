@@ -5,7 +5,7 @@ configuration {
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-    show-icons: true;
+/*    show-icons: true; */
 /*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -22,12 +22,12 @@ configuration {
 /*	drun-url-launcher: "xdg-open";*/
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
-    sort: false;
+    sort: true;
 /*	sorting-method: "normal";*/
     case-sensitive: false;
-    cycle: true;
-    sidebar-mode: true;
-    hover-select: true;
+/*    cycle: true; */
+    sidebar-mode: false;
+    hover-select: false;
 /*	eh: 1;*/
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
@@ -47,7 +47,7 @@ configuration {
 /*	combi-display-format: "{mode} {text}";*/
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
-    window-thumbnail: true;
+/*   window-thumbnail: true; */
 /*	drun-use-desktop-cache: false;*/
 /*	drun-reload-desktop-cache: false;*/
 /*	normalize-match: false;*/
@@ -62,10 +62,12 @@ configuration {
       action: "kb-cancel";
       delay:  0;
   }
+/*
   filebrowser {
       directories-first: true;
       sorting-method:    "name";
   }
+*/
 }
 
 @theme "~/.local/share/rofi/themes/rounded-nord-dark.rasi"

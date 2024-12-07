@@ -24,6 +24,12 @@ Ensure, you have installed:
 * [foot](https://codeberg.org/dnkl/foot): The fast, lightweight and minimalistic Wayland terminal emulator.
 * [alacritty](https://github.com/alacritty/alacritty): A fast, cross-platform, OpenGL terminal emulator
 
+## Emojis
+
+```sh
+pacman -S noto-fonts-emoji
+```
+
 Clone with:
 
 ```sh
