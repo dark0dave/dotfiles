@@ -2,7 +2,7 @@
 
 ![](./public/icon/icon.png)
 
-This repo is for macos and linux only.
+This repo is for macos and linux only. Fuck off windows.
 
 ## Setup
 
