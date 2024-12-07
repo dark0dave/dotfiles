@@ -13,7 +13,7 @@ window#waybar {
   background: transparent;
 }
 
-#custom-arch, #workspaces {
+#custom-arch, #gamemode, #workspaces {
   border-radius: 10px;
   background-color: #191a24;
   color: #c0caf5;
@@ -48,7 +48,7 @@ window#waybar {
   margin-right: 15px;
 }
 
-#clock,#pulseaudio-slider, #temperature, #cpu, #pulseaudio, #network, #battery , #tray, #memory, #custom-playerctl, #custom-weather{
+#clock, #pulseaudio-slider, #cpu, #pulseaudio, #network, #battery , #tray, #memory, #custom-playerctl, #custom-weather{
   border-radius: 10px;
   background-color: #191a24;
   color: #c0caf5;
