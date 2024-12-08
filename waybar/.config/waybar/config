@@ -3,6 +3,7 @@
   "modules-left": [
     "custom/arch",
     "gamemode",
+    "privacy",
     "hyprland/workspaces",
     "cpu",
     "memory",
@@ -15,12 +16,22 @@
   "modules-right": [
     "custom/weather",
     "battery",
-    "pulseaudio/slider",
+    "bluetooth",
+    "custom/mic",
     "pulseaudio"
   ],
   "custom/arch": {
     "format": " 🐧",
     "on-click": "rofi -show drun"
+  },
+  "bluetooth": {
+    // "controller": "controller1",
+    "format": " {status}",
+    "format-disabled": "",
+    "format-connected": " {num_connections} connected",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
   "gamemode": {
     "format": "{glyph}",
@@ -31,6 +42,28 @@
     "icon-name": "input-gaming-symbolic",
     "icon-spacing": 4,
     "icon-size": 20
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -62,7 +95,9 @@
     }
   },
   "clock": {
-    "format": "<span color='#b69bf1'>  </span>{:%c}"
+    "format": "{:%c}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "max-length": 35
   },
   "battery": {
     "format": "<span color='#a8cd76'>{icon}</span> {capacity}%",
@@ -79,7 +114,8 @@
       "",
       ""
     ],
-    "format-charging": "<span color='#a8cd76'></span> {capacity}%"
+    "format-charging": "<span color='#a8cd76'></span> {capacity}%",
+    "interval": 1
   },
   "pulseaudio/slider": {
     "min": 0,
@@ -107,15 +143,24 @@
     "format": "<span color='#b69bf1'>{}</span>",
     "alt-format": "{}",
     "max-length": 55,
+    "interval": 600,
     "exec": "curl 'https://wttr.in/London?format=%l:+%c+%t' 2>/dev/null",
     "on-click": "xdg-open https://wttr.in/"
   },
+  "custom/mic": {
+    "format": "<span color='#f7768e'>🎙</span> {}",
+    "alt-format": "{}",
+    "interval": 5,
+    "justify": "center",
+    "exec": "pactl -f json list 2>/dev/null | jq -rc '.sources[1].volume.\"front-right\".value_percent'",
+    "on-click": "pavucontrol"
+  },
   "custom/playerctl": {
-    "format": "{icon}  <span>{1}:{0}</span>  {icon}",
+    "format": "{icon}: {0}",
     "return-type": "json",
     "hide-empty-text": false,
-    "max-length": 55,
-    "exec": "playerctl -a metadata --format '{\"text\": \"  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "max-length": 25,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}}:{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click-middle": "playerctl previous",
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",

@@ -18,15 +18,10 @@ window#waybar {
   background-color: #191a24;
   color: #c0caf5;
   margin-top: 15px;
-	margin-right: 15px;
+  margin-right: 15px;
   padding-top: 1px;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-#custom-arch {
-  font-size: 20px;
-	margin-left: 15px;
 }
 
 #workspaces button {
@@ -38,17 +33,7 @@ window#waybar {
   color: #2ac3de;
 }
 
-#custom-network{
-  border-radius: 10px;
-  background-color: #191a24;
-  color: #c0caf5;
-  margin-top: 15px;
-  padding-left: 9px;
-  padding-right: 9px;
-  margin-right: 15px;
-}
-
-#clock, #pulseaudio-slider, #cpu, #pulseaudio, #network, #battery , #tray, #memory, #custom-playerctl, #custom-weather{
+#clock, #bluetooth, #battery, #cpu, #custom-mic, #pulseaudio, #pulseaudio-slider, #network, #tray, #memory, #custom-playerctl, #custom-weather{
   border-radius: 10px;
   background-color: #191a24;
   color: #c0caf5;
@@ -80,6 +65,25 @@ window#waybar {
   padding-left: 10px;
 }
 
+#custom-mic {
+  padding-top: 5px;
+}
+
+#custom-mic, #pulseaudio {
+  font-size: 16.5px;
+  font-weight: bold;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  background-color: #bbc7fd;
+}
+
 #pulseaudio-slider trough {
   min-width: 100px;
   border-radius: 5px;
@@ -87,7 +91,7 @@ window#waybar {
 }
 
 #pulseaudio-slider highlight {
-  min-width: 10px;
+  min-width: 9px;
   border-radius: 5px;
-  background-color: #c0caf5;
+  background-color: #b69bf1;
 }
