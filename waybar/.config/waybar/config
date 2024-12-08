@@ -97,7 +97,8 @@
   "clock": {
     "format": "{:%c}",
     "tooltip-format": "<tt>{calendar}</tt>",
-    "max-length": 35
+    "max-length": 35,
+    "interval": 1
   },
   "battery": {
     "format": "<span color='#a8cd76'>{icon}</span> {capacity}%",
