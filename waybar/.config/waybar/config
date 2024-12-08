@@ -117,11 +117,6 @@
     "format-charging": "<span color='#a8cd76'></span> {capacity}%",
     "interval": 1
   },
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 80,
-    "orientation": "horizontal"
-  },
   "pulseaudio": {
     "on-click": "pavucontrol",
     "format": "<span color='#f7768e'></span> {volume}%",
