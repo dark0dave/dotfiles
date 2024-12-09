@@ -15,10 +15,11 @@
   ],
   "modules-right": [
     "custom/weather",
-    "battery",
     "bluetooth",
     "custom/mic",
-    "pulseaudio"
+    "pulseaudio",
+    "battery",
+    "network"
   ],
   "custom/arch": {
     "format": " 🐧",
@@ -42,6 +43,18 @@
     "icon-name": "input-gaming-symbolic",
     "icon-spacing": 4,
     "icon-size": 20
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "",
+    "format-ethernet": "󰊗",
+    "format-disconnected": "📵",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": " {essid} ",
+    "tooltip-format-ethernet": " {ipaddr}/{cidr} ",
+    "tooltip-format-disconnected": "📵",
+    "on-click": "iwgtk || nm-connection-editor",
+    "max-length": 10
   },
   "privacy": {
     "icon-spacing": 4,
