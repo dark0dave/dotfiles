@@ -35,7 +35,7 @@ window#waybar {
   color: #2ac3de;
 }
 
-#clock, #bluetooth, #battery, #cpu, #custom-mic, #pulseaudio, #pulseaudio-slider, #network, #tray, #memory, #custom-playerctl, #custom-weather {
+#clock, #bluetooth, #battery, #cpu, #custom-mic, #pulseaudio, #pulseaudio-slider, #network, #tray, #memory, #custom-notification, #custom-playerctl, #custom-weather {
   border-radius: 10px;
   background-color: #191a24;
   color: #c0caf5;
