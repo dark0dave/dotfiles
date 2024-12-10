@@ -42,7 +42,7 @@ window#waybar {
   margin-top: 1px;
   margin-bottom: 1px;
   margin-right: 5px;
-  padding-top: 1px;
+  padding-top: 6px;
   padding-bottom: 1px;
   padding-left: 10px;
   padding-right: 10px;
@@ -68,10 +68,6 @@ window#waybar {
 #tray {
   padding-right: 8px;
   padding-left: 10px;
-}
-
-#memory, #custom-weather, #custom-mic {
-  padding-top: 6px;
 }
 
 #custom-mic, #pulseaudio {
