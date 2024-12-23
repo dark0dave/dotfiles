@@ -3,7 +3,6 @@
   "modules-left": [
     "custom/arch",
     "gamemode",
-    "privacy",
     "hyprland/workspaces",
     "cpu",
     "memory",
@@ -39,7 +38,7 @@
     "format": "{glyph}",
     "format-alt": "{glyph} {count}",
     "glyph": "",
-    "hide-not-running": false,
+    "hide-not-running": true,
     "use-icon": true,
     "icon-name": "input-gaming-symbolic",
     "icon-spacing": 4,
@@ -56,28 +55,6 @@
     "tooltip-format-disconnected": "📵",
     "on-click": "iwgtk || nm-connection-editor",
     "max-length": 10
-  },
-  "privacy": {
-    "icon-spacing": 4,
-    "icon-size": 18,
-    "transition-duration": 250,
-    "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      },
-      {
-        "type": "audio-out",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      }
-    ]
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -154,8 +131,8 @@
     "alt-format": "{}",
     "max-length": 55,
     "interval": 600,
-    "exec": "curl 'https://wttr.in/London?format=%l:+%c+%t' 2>/dev/null",
-    "on-click": "xdg-open https://wttr.in/"
+    "exec": "curl \"https://wttr.in/$(curl ipinfo.io 2>/dev/null | jq -r .region )?m&format=%l:+%c+%t\" 2>/dev/null",
+    "on-click": "xdg-open https://wttr.in/$(curl ipinfo.io 2>/dev/null | jq -r .region )"
   },
   "custom/mic": {
     "format": "<span color='#f7768e'>🎙</span> {}",
