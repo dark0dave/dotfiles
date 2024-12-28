@@ -51,3 +51,4 @@ alias rename=perl-rename
 # QT https://wiki.archlinux.org/title/Wayland#Qt
 QT_QPA_PLATFORM="wayland;xcb"
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"

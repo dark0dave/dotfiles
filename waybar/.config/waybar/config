@@ -29,6 +29,7 @@
     "format": " {status}",
     "format-disabled": " off",
     "format-connected": " {num_connections} connected",
+    "format-no-controller": "",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
