@@ -170,6 +170,7 @@
     "hide-empty-text": false,
     "max-length": 25,
     "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}}:{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "interval": 5,
     "on-click-middle": "playerctl previous",
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",

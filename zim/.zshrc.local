@@ -24,7 +24,7 @@ DO_NOT_TRACK=1
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 AZURE_CORE_COLLECT_TELEMETRY=0
 # Aliases
-alias pbcopy='xclip -selection clipboard'
+alias pbcopy=wl-copy
 alias weather='curl "https://wttr.in/?format=4"'
 alias ls=lsd
 alias cat=bat
@@ -44,6 +44,9 @@ TF_PLUGIN_CACHE_DIR="${HOME}/.cache/opentofu"
 # Python
 PYTHONSTARTUP=$HOME/.pythonrc.py
 
+# Go
+GOPATH=$HOME/.go
+
 alias docker=podman
 alias docker-compose=podman-compose
 alias rename=perl-rename
@@ -52,3 +55,7 @@ alias rename=perl-rename
 QT_QPA_PLATFORM="wayland;xcb"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
+
+# Git Alias
+alias gf='git remote | xargs -I {} -P 5 git fetch -v -t {}'
+
