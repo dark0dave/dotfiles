@@ -27,7 +27,21 @@
   "bluetooth": {
     "format": " {status}",
     "format-disabled": " off",
-    "format-connected": " {num_connections} connected",
+    "format-connected": " {num_connections} {device_battery_percentage}% {device_alias}",
+    "format-connected-battery": " {num_connections} {device_alias} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "format-no-controller": "",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
