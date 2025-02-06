@@ -1,11 +1,10 @@
 set -a
 
+XDG_CONFIG_HOME=$HOME/.config
 # Bin files
-PATH=$PATH:$HOME/.local/bin:$HOME/projects/bg_mods/tools/weidu:$HOME/.steam/steam/compatibilitytools.d/latest/files/bin
-PATH=$PATH:/opt/**/
+PATH=$PATH:$HOME/.local/bin:$HOME/.steam/steam/compatibilitytools.d/GE-Proton-latest/files/bin
 
 # Set editor hx PRAY TO HELIX
-alias hx=helix
 VISUAL=hx
 EDITOR="$VISUAL"
 
@@ -26,8 +25,6 @@ AZURE_CORE_COLLECT_TELEMETRY=0
 # Aliases
 alias pbcopy=wl-copy
 alias weather='curl "https://wttr.in/?format=4"'
-alias ls=lsd
-alias cat=bat
 
 # Direnv
 eval "$(direnv hook zsh)"
@@ -49,13 +46,16 @@ GOPATH=$HOME/.go
 
 alias docker=podman
 alias docker-compose=podman-compose
-alias rename=perl-rename
 
 # QT https://wiki.archlinux.org/title/Wayland#Qt
-QT_QPA_PLATFORM="wayland;xcb"
+# QT_QPA_PLATFORM="wayland;xcb"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
+ZSH_HIGHLIGHT_STYLES[comment]='fg=grey'
 
 # Git Alias
 alias gf='git remote | xargs -I {} -P 5 git fetch -v -t {}'
+
+# Nixshell zsh
+alias nix-shell='nix-shell --run $SHELL'
 

@@ -5,3 +5,4 @@ set -a
 ###
 git config --local user.email <email>
 git config --local user.name <username>
+use nix

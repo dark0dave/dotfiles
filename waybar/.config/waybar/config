@@ -2,7 +2,6 @@
   "layer": "top",
   "modules-left": [
     "custom/arch",
-    "gamemode",
     "hyprland/workspaces",
     "cpu",
     "memory",
@@ -34,16 +33,6 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "blueman-manager"
-  },
-  "gamemode": {
-    "format": "{glyph}",
-    "format-alt": "{glyph} {count}",
-    "glyph": "",
-    "hide-not-running": true,
-    "use-icon": true,
-    "icon-name": "input-gaming-symbolic",
-    "icon-spacing": 4,
-    "icon-size": 20
   },
   "network": {
     "format": "{ifname}",
@@ -165,11 +154,11 @@
     "escape": true
   },
   "custom/playerctl": {
-    "format": "{icon}: {0}",
+    "format": "{icon} {0}",
     "return-type": "json",
     "hide-empty-text": false,
     "max-length": 25,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}}:{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}}:{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}'",
     "interval": 5,
     "on-click-middle": "playerctl previous",
     "on-click": "playerctl play-pause",
