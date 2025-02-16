@@ -2,7 +2,7 @@
 
 ![](./public/icon/icon.png)
 
-This repo is for macos and linux only. Fuck off windows.
+This repo is for linux only. Fuck off windows and macos.
 
 ## Setup
 
@@ -19,6 +19,7 @@ Ensure, you have installed:
 * [mise](https://github.com/jdx/mise): A version manager for multiple programming langauges
 * [rofi](https://github.com/davatorium/rofi): A better dbus menu
 #### Pick one of these
+* [ghostty](https://ghostty.org/): is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
 * [wezterm](https://github.com/wez/wezterm): A GPU-accelerated cross-platform terminal emulator and multiplexer 
 * [kitty](https://github.com/kovidgoyal/kitty): The fast, feature-rich, GPU based terminal emulator
 * [foot](https://codeberg.org/dnkl/foot): The fast, lightweight and minimalistic Wayland terminal emulator.

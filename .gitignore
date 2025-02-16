@@ -4,3 +4,4 @@ git-cliff
 changelog
 hypr/.config/hypr/monitors.conf
 hypr/.config/hypr/vpn.conf
+hypr/.config/hypr/window_rules.conf
