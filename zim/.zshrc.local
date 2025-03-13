@@ -31,8 +31,8 @@ eval "$(direnv hook zsh)"
 
 # Mise
 ASDF_RUBY_BUILD_VERSION=master
-eval "$(mise activate zsh)"
-PATH="$HOME/.local/share/mise/shims:$PATH"
+which mise &>/dev/null && eval "$(mise activate zsh)" || true
+which mise &>/dev/null && PATH="$HOME/.local/share/mise/shims:$PATH" || true
 
 # open tofu
 [[ ! -f ${HOME}/.cache/opentofu ]] && mkdir -p "${HOME}/.cache/opentofu"
