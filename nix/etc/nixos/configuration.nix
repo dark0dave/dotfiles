@@ -61,12 +61,19 @@
       tree
     ];
   };
+  programs.dconf.profiles.gdm.databases = [{
+   settings."org/gnome/settings-daemon/plugins/power" = {
+    # 30 seconds until automatic suspend
+    idle-delay = lib.gvariant.mkInt32 0;
+    sleep-inactive-ac-timeout = lib.gvariant.mkInt32 0;
+    sleep-inactive-ac-type = "nothing";
+   };
+  }];
   services.tor.enable = true;
   services.tor.client.enable = true;
   services.flatpak.enable = true;
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
   services.mullvad-vpn.enable = true;
-  programs.firefox.enable = true;
   programs.zsh.enable = true;
   virtualisation.containers.enable = true;
   virtualisation = {
@@ -89,6 +96,7 @@
   environment.systemPackages = with pkgs; [
     btop
     cifs-utils
+    citrix_workspace
     direnv
     element-desktop
     ffmpeg
@@ -98,12 +106,12 @@
     helix
     kitty
     legcord
+    librewolf
     lsof
-    mise
-    nmap
     p7zip
     podman
     popcorntime
+    protonmail-desktop
     rename
     rofi-unwrapped
     stow
