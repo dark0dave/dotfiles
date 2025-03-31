@@ -103,12 +103,15 @@
     gh
     gimp
     gitFull
+    gnome-tweaks
     helix
     kitty
     legcord
+    texliveFull
+    libreoffice-fresh
     librewolf
     lsof
-    p7zip
+    p7zip-rar
     podman
     popcorntime
     protonmail-desktop
@@ -144,7 +147,7 @@
   services.openssh.enable = false;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedTCPPorts = [ ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
