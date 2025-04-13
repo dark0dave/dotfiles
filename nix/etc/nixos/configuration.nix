@@ -2,6 +2,11 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 { config, lib, pkgs, ... }:
+let
+  unstableTarball =
+    fetchTarball
+      https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
+in
 {
   nixpkgs.config.allowUnfree = true;
   imports =
@@ -19,6 +24,13 @@
   networking.networkmanager.dns = "default";
   networking.resolvconf.enable = false;
   networking.networkmanager.ethernet.macAddress = "random";
+  nixpkgs.config = {
+    packageOverrides = pkgs: {
+      unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
   # Set your time zone.
   time.timeZone = "Europe/London";
   # Configure network proxy if necessary
@@ -94,9 +106,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    amberol
     btop
     cifs-utils
     citrix_workspace
+    unstable.deskflow
     direnv
     element-desktop
     ffmpeg
@@ -122,6 +136,7 @@
     vscodium
     wezterm
     wget
+    yt-dlp
     zim
   ];
   environment.shells = with pkgs; [ zsh ];
@@ -147,8 +162,8 @@
   services.openssh.enable = false;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 24800 ];
+  # networking.firewall.allowedUDPPorts = [ ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
   # Copy the NixOS configuration file and link it from the resulting system
