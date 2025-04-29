@@ -1,5 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 { config, lib, pkgs, ... }:
 let
@@ -10,14 +8,13 @@ in
 {
   nixpkgs.config.allowUnfree = true;
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
+  networking.hostName = "nixos";
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.enableIPv6 = false;
@@ -31,13 +28,52 @@ in
       };
     };
   };
-  # Set your time zone.
   time.timeZone = "Europe/London";
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  # https://search.nixos.org/options?channel=24.11&from=0&size=50&sort=relevance&type=packages&query=fonts
+  fonts = {
+    fontDir.enable = true;
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      dejavu_fonts
+      freefont_ttf
+      gyre-fonts # TrueType substitutes for standard PostScript fonts
+      liberation_ttf
+      unifont
+      noto-fonts-color-emoji
+      corefonts
+      ubuntu_font_family
+      powerline-fonts
+      font-awesome
+      source-code-pro
+      noto-fonts
+      noto-fonts-cjk-sans
+      nerdfonts
+    ];
+
+    fontconfig = {
+      enable = true;
+      useEmbeddedBitmaps = true;
+      defaultFonts = {
+        monospace = [
+          "Noto Mono for Powerline"
+        ];
+        sansSerif = [
+          "Noto Sans"
+        ];
+        serif = [
+          "Noto Serif"
+        ];
+        emoji = [
+          "Noto Color Emoji"
+        ];
+      };
+    };
+  };
   # console = {
   #  font = "Lat2-Terminus16";
   #  keyMap = "us";
@@ -45,9 +81,11 @@ in
   # };
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  xdg.icons.enable = true;
+  # https://wiki.nixos.org/wiki/Category:Desktop_environment
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.mate.enable = true;
+  xdg.portal.enable = true;
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -84,6 +122,7 @@ in
   services.tor.enable = true;
   services.tor.client.enable = true;
   services.flatpak.enable = true;
+  environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
   services.mullvad-vpn.enable = true;
   programs.zsh.enable = true;
@@ -110,28 +149,33 @@ in
     btop
     cifs-utils
     citrix_workspace
-    unstable.deskflow
     direnv
     element-desktop
+    eww
     ffmpeg
+    freetube
     gh
     gimp
     gitFull
-    gnome-tweaks
     helix
     kitty
     legcord
-    texliveFull
     libreoffice-fresh
     librewolf
     lsof
+    material-design-icons
     p7zip-rar
     podman
     popcorntime
     protonmail-desktop
     rename
     rofi-unwrapped
+    signal-desktop
     stow
+    texliveFull
+    unstable.deskflow
+    unstable.limo
+    unstable.nexusmods-app
     vlc
     vscodium
     wezterm
@@ -157,10 +201,8 @@ in
   };
 
   # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = false;
-
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 24800 ];
   # networking.firewall.allowedUDPPorts = [ ];
@@ -170,7 +212,6 @@ in
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
   system.copySystemConfiguration = true;
-
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
@@ -188,6 +229,5 @@ in
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.11";
 }
-
