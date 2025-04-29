@@ -1,8 +1,4 @@
+#!/usr/bin/env sh
 set -a
-
-###
-# Sample .envrc file containing all environment variables
-###
-git config --local user.email <email>
-git config --local user.name <username>
 use nix
+mkdir -p "${TMPDIR}"

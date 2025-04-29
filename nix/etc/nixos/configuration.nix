@@ -10,9 +10,12 @@ in
   imports =
     [
       ./hardware-configuration.nix
-    ];
+   ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=15s
+  '';
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "nixos";
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
@@ -85,7 +88,10 @@ in
   # https://wiki.nixos.org/wiki/Category:Desktop_environment
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.mate.enable = true;
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -147,11 +153,11 @@ in
   environment.systemPackages = with pkgs; [
     amberol
     btop
+    candy-icons
     cifs-utils
     citrix_workspace
     direnv
     element-desktop
-    eww
     ffmpeg
     freetube
     gh
@@ -172,6 +178,7 @@ in
     rofi-unwrapped
     signal-desktop
     stow
+    sweet-folders
     texliveFull
     unstable.deskflow
     unstable.limo
