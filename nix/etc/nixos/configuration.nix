@@ -108,6 +108,20 @@ in
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+  # Dark theme
+  environment.etc = {
+    "xdg/gtk-2.0/gtkrc".text = "gtk-error-bell=0";
+    "xdg/gtk-3.0/settings.ini".text = ''
+      [Settings]
+      gtk-error-bell=false
+      gtk-application-prefer-dark-theme=1
+    '';
+    "xdg/gtk-4.0/settings.ini".text = ''
+      [Settings]
+      gtk-error-bell=false
+      gtk-application-prefer-dark-theme=1
+    '';
+  };
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
