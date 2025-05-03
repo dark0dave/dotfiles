@@ -83,11 +83,27 @@ in
   #  useXkbConfig = true; # use xkb.options in tty.
   # };
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
   xdg.icons.enable = true;
   # https://wiki.nixos.org/wiki/Category:Desktop_environment
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.mate.enable = true;
+  services.xserver = { 
+    enable = true;
+    desktopManager = {
+      xterm.enable = false;
+      xfce.enable = true;
+    };
+  };
+  # Thunar
+  programs.xfconf.enable = true;
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-media-tags-plugin
+    thunar-volman
+  ];
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
+  services.displayManager.defaultSession = "xfce";
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -163,6 +179,7 @@ in
     gh
     gimp
     gitFull
+    gparted
     helix
     kitty
     legcord
@@ -187,6 +204,7 @@ in
     vscodium
     wezterm
     wget
+    xarchiver
     yt-dlp
     zim
   ];
