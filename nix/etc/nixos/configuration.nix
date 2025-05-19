@@ -12,11 +12,6 @@ in
       ./hardware-configuration.nix
    ];
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=15s
-  '';
-  boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "nixos";
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -109,17 +104,30 @@ in
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
   # Dark theme
+  # https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/-/blob/main/schemas/org.gnome.desktop.interface.gschema.xml.in?ref_type=heads
   environment.etc = {
     "xdg/gtk-2.0/gtkrc".text = "gtk-error-bell=0";
     "xdg/gtk-3.0/settings.ini".text = ''
       [Settings]
       gtk-error-bell=false
       gtk-application-prefer-dark-theme=1
+      gtk-theme='Material-Black-Cherry'
+      icon-theme='Sweet-Red-Filled'
+      monospace-font-name='Noto Mono for Powerline 12'
+      clock-show-seconds=true
+      color-scheme='prefer-dark'
+      cursor-theme='oreo_spark_red_bordered_cursors'
     '';
     "xdg/gtk-4.0/settings.ini".text = ''
       [Settings]
       gtk-error-bell=false
       gtk-application-prefer-dark-theme=1
+      gtk-theme='Material-Black-Cherry'
+      icon-theme='Sweet-Red-Filled'
+      monospace-font-name='Noto Mono for Powerline 12'
+      clock-show-seconds=true
+      color-scheme='prefer-dark'
+      cursor-theme='oreo_spark_red_bordered_cursors'
     '';
   };
   # Configure keymap in X11
@@ -159,7 +167,7 @@ in
   services.tor.client.enable = true;
   services.flatpak.enable = true;
   environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
-  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+  services.mullvad-vpn.package = pkgs.unstable.mullvad-vpn;
   services.mullvad-vpn.enable = true;
   programs.zsh.enable = true;
   virtualisation.containers.enable = true;
@@ -183,6 +191,7 @@ in
   environment.systemPackages = with pkgs; [
     amberol
     btop
+    caffeine-ng
     candy-icons
     cifs-utils
     citrix_workspace
@@ -196,11 +205,12 @@ in
     gparted
     helix
     kitty
-    legcord
+    unstable.legcord
     libreoffice-fresh
     librewolf
     lsof
     material-design-icons
+    oreo-cursors-plus
     p7zip-rar
     podman
     popcorntime

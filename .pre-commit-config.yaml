@@ -20,7 +20,8 @@ repos:
             (?x)^(
               public/icons/.*|
               wallpaper/.*|
-              firefox/.*mozlz4
+              firefox/.*mozlz4|
+              vlc/.*vlt
             )$
       - id: git-dirty
         stages: [pre-commit]
@@ -32,7 +33,7 @@ repos:
       - id: remove-crlf
         stages: [pre-commit]
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.6.0
+    rev: v4.7.2
     hooks:
       - id: commitizen
         stages: [commit-msg]

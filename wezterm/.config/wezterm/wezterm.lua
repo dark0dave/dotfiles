@@ -29,6 +29,7 @@ config.window_padding = {
 config.hide_tab_bar_if_only_one_tab = false
 config.window_decorations = "RESIZE"
 -- https://wezfurlong.org/wezterm/config/default-keys.html?h=key
+config.adjust_window_size_when_changing_font_size = false
 config.disable_default_key_bindings = true
 config.keys = {
   { key = 'L', mods = 'CTRL', action = wezterm.action.ShowDebugOverlay },
