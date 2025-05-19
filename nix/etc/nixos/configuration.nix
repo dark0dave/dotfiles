@@ -232,6 +232,14 @@ in
     yt-dlp
     zim
   ];
+  services.ollama = {
+    enable = true;
+    acceleration = "rocm";
+    environmentVariables = {
+      HCC_AMDGPU_TARGET = "gfx110"; # used to be necessary, but doesn't seem to anymore
+    };
+    rocmOverrideGfx = "11.0.2";
+  };
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.steam = {
