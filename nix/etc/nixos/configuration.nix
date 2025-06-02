@@ -212,6 +212,7 @@ in
     material-design-icons
     oreo-cursors-plus
     p7zip-rar
+    protontricks
     podman
     popcorntime
     protonmail-desktop
@@ -222,13 +223,13 @@ in
     sweet-folders
     texliveFull
     unstable.deskflow
-    unstable.limo
     unstable.nexusmods-app
     vlc
     vscodium
     wezterm
     wget
     xarchiver
+    xdg-desktop-portal-xapp
     yt-dlp
     zim
   ];
