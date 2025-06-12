@@ -65,3 +65,5 @@ fi
 # Nixshell zsh
 alias nix-shell='nix-shell --run $SHELL'
 
+# fzf
+source <(fzf --zsh)
