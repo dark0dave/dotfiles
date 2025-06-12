@@ -48,6 +48,10 @@ window#waybar {
   padding-right: 10px;
 }
 
+#custom-mic {
+  padding-top: 13px;
+}
+
 @keyframes blink {
   to {
     background-color: #ffffff;

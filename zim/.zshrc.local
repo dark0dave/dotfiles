@@ -55,6 +55,12 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=grey'
 
 # Git Alias
 alias gf='git remote | xargs -I {} -P 5 git fetch -v -t {}'
+alias gfp='gf && git branch | grep -v "*" | xargs -I {} git branch -D {}'
+alias gas='git add -vA && git status'
+
+if uwsm check may-start; then
+  exec uwsm start hyprland.desktop
+fi
 
 # Nixshell zsh
 alias nix-shell='nix-shell --run $SHELL'

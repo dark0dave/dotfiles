@@ -10,7 +10,7 @@ config.colors.scrollbar_thumb = "white"
 
 config.color_scheme = 'tokyonight_night'
 config.font = wezterm.font('Roboto Mono for Powerline', { 
-  weight = "Light",
+  weight = "Light", 
   stretch = "Normal",
   italic = false,
 })
