@@ -11,12 +11,20 @@ in
     [
       ./hardware-configuration.nix
    ];
+  # Cleanup
+  nix.gc.dates = "daily";
+  nix.gc.options = "--delete-older-than 5d";
+  nix.gc.automatic = true;
   # Use the systemd-boot EFI boot loader.
   networking.hostName = "nixos";
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.enableIPv6 = false;
-  networking.networkmanager.dns = "default";
+  networking.networkmanager.dns = "none";
+  networking.nameservers = [
+    "8.8.8.8"
+    "8.8.4.4"
+  ];
   networking.resolvconf.enable = false;
   networking.networkmanager.ethernet.macAddress = "random";
   nixpkgs.config = {
@@ -50,8 +58,7 @@ in
       source-code-pro
       noto-fonts
       noto-fonts-cjk-sans
-      nerdfonts
-    ];
+    ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts) ;
 
     fontconfig = {
       enable = true;
@@ -194,11 +201,11 @@ in
     caffeine-ng
     candy-icons
     cifs-utils
-    citrix_workspace
     direnv
     element-desktop
     ffmpeg
     freetube
+    fzf
     gh
     gimp
     gitFull
@@ -216,6 +223,7 @@ in
     podman
     popcorntime
     protonmail-desktop
+    qbittorrent-enhanced
     rename
     rofi-unwrapped
     signal-desktop
@@ -248,8 +256,8 @@ in
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    gamescopeSession.enable = true;
   };
-  programs.steam.gamescopeSession.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
@@ -287,5 +295,5 @@ in
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }
