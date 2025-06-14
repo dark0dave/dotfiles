@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 set -a
 
 XDG_CONFIG_HOME=$HOME/.config
