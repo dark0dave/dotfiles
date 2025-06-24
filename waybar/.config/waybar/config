@@ -12,7 +12,7 @@
     "custom/playerctl"
   ],
   "modules-right": [
-   "custom/notification",
+    "custom/notification",
     "bluetooth",
     "custom/mic",
     "pulseaudio",
@@ -26,20 +26,20 @@
   "bluetooth": {
     "format": " {status}",
     "format-disabled": " off",
-    "format-connected": " {num_connections} {device_battery_percentage}% {device_alias}",
-    "format-connected-battery": " {num_connections} {device_alias} {icon}",
+    "format-connected": " {num_connections} {device_battery_percentage}%",
+    "format-connected-battery": " {num_connections} {device_alias} {icon} {device_battery_percentage}%",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
     ],
     "format-no-controller": "",
     "tooltip-format": "{controller_alias}\t{controller_address}",
@@ -97,24 +97,24 @@
   "battery": {
     "format": "<span color='#a8cd76'>{icon}</span> {capacity}%",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
     ],
     "format-charging": "<span color='#a8cd76'></span> {capacity}%",
     "interval": 1
   },
   "pulseaudio": {
     "on-click": "flatpak run com.saivert.pwvucontrol",
-    "format": "<span color='#f7768e'></span> {volume}%",
+    "format": "<span color='#f7768e'> </span> {volume}%",
     "format-muted": "<span color='#f7768e'>🔇</span> {volume}"
   },
   "memory": {

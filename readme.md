@@ -31,6 +31,12 @@ Ensure, you have installed:
 pacman -S noto-fonts-emoji
 ```
 
+## Icons
+
+https://www.nerdfonts.com/cheat-sheet
+
+## Get started
+
 Clone with:
 
 ```sh

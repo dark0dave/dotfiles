@@ -18,6 +18,7 @@ automake
 b43-fwcutter
 base
 bat
+bibata-cursor-theme
 bind
 bison
 blueman
@@ -25,6 +26,7 @@ bluez-utils
 brightnessctl
 btop
 btrfs-progs
+btrfsmaintenance
 bzip2
 cheese
 clang
@@ -57,6 +59,7 @@ exfatprogs
 f2fs-tools
 fakeroot
 fd
+ffmpeg-audio-thumbnailer
 ffmpegthumbnailer
 file-roller
 flatpak-builder
@@ -81,7 +84,9 @@ gparted
 granite
 grim
 grub
+grub-theme-manjaro
 gthumb
+gtksourceview-pkgbuild
 gufw
 gvfs
 haveged
@@ -113,10 +118,10 @@ lib32-v4l-utils
 lib32-vulkan-radeon
 libappindicator-gtk3
 libdvdcss
+libinput-gestures
+libpamac-flatpak-plugin
 libqalculate
 libreoffice-still
-linux
-linux-headers
 localsearch
 logrotate
 lrzip
@@ -133,6 +138,9 @@ memtest86+
 memtest86+-efi
 mesa-utils
 meson
+mhwd
+mhwd-db
+mkinitcpio-openswap
 modemmanager
 mousepad
 nano
@@ -154,6 +162,8 @@ openresolv
 openssh
 optipng
 os-prober
+pamac-gtk
+papirus-maia-icon-theme
 parallel
 perf
 perl
@@ -165,6 +175,7 @@ pipewire-pulse
 pipewire-session-manager
 pkgconf
 pkgfile
+plymouth-theme-manjaro
 podman
 postgresql-libs
 power-profiles-daemon
@@ -190,6 +201,7 @@ steam-native-runtime
 stow
 streamlink
 sudo
+supergfxctl
 swaybg
 swaync
 swig
@@ -212,9 +224,11 @@ thunar-shares-plugin
 thunar-vcs-plugin
 thunar-volman
 timeshift
+timeshift-autosnap-manjaro
 tk
 tmux
 tor
+touche
 ttf-dejavu
 ttf-droid
 ttf-hack
@@ -231,6 +245,7 @@ vlc
 vorbis-tools
 vulkan-radeon
 waybar
+webapp-manager
 wezterm
 wget
 which
@@ -251,7 +266,6 @@ xf86-video-intel
 xf86-video-nouveau
 xfce4-artwork
 xfsprogs
-xorg-server
 xorg-xinit
 yggdrasil
 zsh-autosuggestions

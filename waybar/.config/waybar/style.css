@@ -49,7 +49,7 @@ window#waybar {
 }
 
 #custom-mic {
-  padding-top: 13px;
+  padding-bottom: 3px;
 }
 
 @keyframes blink {
