@@ -3,7 +3,7 @@ set -a
 
 XDG_CONFIG_HOME=$HOME/.config
 # Bin files
-PATH=$PATH:$HOME/.local/bin:$HOME/.steam/steam/compatibilitytools.d/GE-Proton-latest/files/bin
+PATH=$PATH:$HOME/projects/bg_mods/tools/weidu:$HOME/.local/bin:$HOME/.steam/steam/compatibilitytools.d/GE-Proton-latest/files/bin
 
 # Set editor hx PRAY TO HELIX
 VISUAL=hx
@@ -17,6 +17,7 @@ SAVEHIST=5000000            #Number of history entries to save to disk
 setopt appendhistory     #Append history to the history file (no overwriting)
 setopt sharehistory      #Share history across terminals
 setopt incappendhistory  #Immediately append to the history file, not just when a term is killed
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insentive match
 
 # Global opt out https://consoledonottrack.com/
 DO_NOT_TRACK=1
