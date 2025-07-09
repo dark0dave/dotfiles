@@ -31,8 +31,13 @@ window#waybar {
   color: #c0caf5;
 }
 
+#workspaces button:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
+}
+
 #workspaces button.active {
-  color: #2ac3de;
+  color: #3ac3de;
 }
 
 #clock, #bluetooth, #battery, #cpu, #custom-mic, #pulseaudio, #pulseaudio-slider, #network, #tray, #memory, #custom-notification, #custom-playerctl, #custom-weather {
