@@ -2,14 +2,22 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Config
+if os.getenv("XDG_CURRENT_DESKTOP") == "Hyprland" then
+  config.enable_wayland = false
+else
+  config.enable_wayland = true
+end
 config.audible_bell = Disabled
 config.enable_scroll_bar = true
+config.enable_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.min_scroll_bar_height = "1cell"
 config.scrollback_lines = 5000000
 config.colors = {}
 config.colors.scrollbar_thumb = "white"
 
 config.color_scheme = 'tokyonight_night'
-config.font = wezterm.font('Roboto Mono for Powerline', { 
+config.font = wezterm.font('JetBrains Mono', { 
   weight = "Light", 
   stretch = "Normal",
   italic = false,

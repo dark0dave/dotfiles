@@ -7,6 +7,7 @@ adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 adobe-source-sans-fonts
 adw-gtk-theme
+alacritty
 amberol
 amd-ucode
 android-tools
@@ -28,7 +29,6 @@ btop
 btrfs-progs
 btrfsmaintenance
 bzip2
-cheese
 clang
 cmake
 collision
@@ -65,13 +65,11 @@ ffmpegthumbnailer
 file-roller
 flatpak-builder
 flex
-foot
 fortune-mod
 fprintd
 fuse-overlayfs
 fzf
 gamemode
-gamescope
 gedit
 ghostty
 gimp
@@ -85,7 +83,6 @@ gparted
 granite
 grim
 grub
-grub-theme-manjaro
 gthumb
 gtksourceview-pkgbuild
 gufw
@@ -252,7 +249,6 @@ vorbis-tools
 vulkan-radeon
 waybar
 webapp-manager
-wezterm
 wget
 which
 wine-staging
