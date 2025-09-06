@@ -54,6 +54,8 @@ dunst
 e2fsprogs
 ecryptfs-utils
 efibootmgr
+element-desktop
+element-web
 endeavour
 evolution
 exfatprogs
@@ -63,6 +65,7 @@ fd
 ffmpeg-audio-thumbnailer
 ffmpegthumbnailer
 file-roller
+fish
 flatpak-builder
 flex
 fortune-mod
@@ -225,11 +228,9 @@ timeshift
 timeshift-autosnap-manjaro
 tk
 tmux
-tor
 touche
 ttf-dejavu
 ttf-droid
-ttf-font-awesome
 ttf-hack
 ttf-inconsolata
 ttf-indic-otf
@@ -245,6 +246,7 @@ uwsm
 vala
 vi
 vlc
+vlc-plugins-all
 vorbis-tools
 vulkan-radeon
 waybar
@@ -257,6 +259,7 @@ wireless-regdb
 wl-clipboard
 wlroots0.18
 wmctrl
+woff2-font-awesome
 wpa_supplicant
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-wlr
@@ -268,6 +271,7 @@ xf86-video-nouveau
 xfce4-artwork
 xfsprogs
 xorg-xinit
+xwayland-satellite
 yggdrasil
 zsh-autosuggestions
 zsh-completions
