@@ -107,16 +107,11 @@ end
 function agnoster::git::stashed
     command git rev-parse --verify --quiet refs/stash >/dev/null; and echo -n "$AGNOSTER_ICON_SCM_STASHED"
 end
-
-function agnoster::git::staged
-    command git diff --cached --no-ext-diff --quiet --exit-code; or echo -n "$AGNOSTER_ICON_SCM_STAGED"
-end
 # }}}
 
 function agnoster::git -d "Display the actual git state"
     agnoster::git::is_repo; or return
 
-    set -f staged (agnoster::git::staged)
     set -f stashed (agnoster::git::stashed)
     set -f branch (agnoster::git::branch)
     set -f ahead (agnoster::git::ahead)
