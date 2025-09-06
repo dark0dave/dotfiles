@@ -10,10 +10,10 @@ agnoster::set_default AGNOSTER_ICON_ERROR \u2717
 agnoster::set_default AGNOSTER_ICON_ROOT \u26a1
 agnoster::set_default AGNOSTER_ICON_BGJOBS \u2699
 
-agnoster::set_default AGNOSTER_ICON_SCM_BRANCH \u2387
+agnoster::set_default AGNOSTER_ICON_SCM_BRANCH 
 agnoster::set_default AGNOSTER_ICON_SCM_REF \u27a6
-agnoster::set_default AGNOSTER_ICON_SCM_STAGED '…'
-agnoster::set_default AGNOSTER_ICON_SCM_STASHED '~'
+agnoster::set_default AGNOSTER_ICON_SCM_STAGED '±'
+agnoster::set_default AGNOSTER_ICON_SCM_STASHED '*'
 
 function agnoster::segment --desc 'Create prompt segment'
     set -f bg $argv[1]
@@ -71,7 +71,7 @@ end
 # Git {{{
 # Utils {{{
 function agnoster::git::is_repo
-    command git rev-parse --is-inside-work-tree 2>/dev/null >/dev/null
+    command git rev-parse --is-inside-work-tree 2>/dev/null 1>/dev/null
 end
 
 function agnoster::git::color
@@ -97,10 +97,8 @@ function agnoster::git::ahead
       /</ {b += 1}
       {if (a > 0 && b > 0) nextfile}
       END {
-        if (a > 0 && b > 0)
+        if (a > 0)
           print "±";
-        else if (a > 0)
-          print "+";
         else if (b > 0)
           print "-"
       }'
@@ -123,11 +121,17 @@ function agnoster::git -d "Display the actual git state"
     set -f branch (agnoster::git::branch)
     set -f ahead (agnoster::git::ahead)
 
-    set -f content "$branch$ahead$staged$stashed"
+    set -f content "$branch $ahead$stashed"
 
-    agnoster::segment (agnoster::git::color) black "$content "
+    agnoster::segment (agnoster::git::color) blue ""
+    agnoster::segment (agnoster::git::color) black " $content "
+    agnoster::segment normal (agnoster::git::color) ""
 end
 # }}}
+
+function agnoster::default_finish
+    agnoster::segment normal blue ""
+end
 
 function agnoster::dir -d 'Print current working directory'
     set -f dir (prompt_pwd)
@@ -138,7 +142,7 @@ function agnoster::dir -d 'Print current working directory'
 end
 
 function agnoster::finish
-    agnoster::segment normal blue ""
+    agnoster::git::is_repo; or agnoster::default_finish;
     echo -n ' '
     set -e __agnoster_background
 end
