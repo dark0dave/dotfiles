@@ -56,7 +56,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
 ZSH_HIGHLIGHT_STYLES[comment]='fg=grey'
 
 # Git Alias
-alias gf='git remote | xargs -I {} -P 5 git fetch -v -t {}'
+alias gf='git remote | xargs -I {} -P 5 git fetch -vfpPt {}'
 alias gfp='gf && git branch | grep -v "*" | xargs -I {} git branch -D {}'
 alias gas='git add -vA && git status'
 

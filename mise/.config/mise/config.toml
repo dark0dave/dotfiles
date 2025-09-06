@@ -7,7 +7,7 @@ kubectl = "latest"
 node = "latest"
 opam = "2.3.0"
 opentofu = "latest"
-python = "latest"
+python = "3.12"
 rust = "latest"
 terragrunt = "latest"
 zig = "latest"
@@ -15,4 +15,7 @@ ant = "latest"
 gh = "latest"
 elixir = "latest"
 yarn = "4.6.0"
+
+[settings]
+experimental = true
 
