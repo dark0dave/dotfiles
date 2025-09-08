@@ -14,6 +14,7 @@ android-tools
 apparmor
 archlinux-contrib
 ark
+audacity
 autoconf
 automake
 b43-fwcutter
@@ -29,6 +30,7 @@ btop
 btrfs-progs
 btrfsmaintenance
 bzip2
+cataclysm-dda
 clang
 cmake
 collision
@@ -71,6 +73,7 @@ flex
 fortune-mod
 fprintd
 fuse-overlayfs
+fuse2
 fzf
 gamemode
 gedit
