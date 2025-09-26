@@ -18,4 +18,5 @@ yarn = "4.6.0"
 
 [settings]
 experimental = true
+lockfile = true
 
