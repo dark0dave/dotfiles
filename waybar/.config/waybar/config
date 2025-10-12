@@ -12,7 +12,6 @@
     "custom/playerctl"
   ],
   "modules-right": [
-    "custom/notification",
     "bluetooth",
     "custom/mic",
     "pulseaudio",
@@ -137,24 +136,6 @@
     "justify": "center",
     "exec": "pactl -f json list 2>/dev/null | jq -rc '{ \"text\": .sources[1].volume.\"front-right\".value_percent, \"tooltip\": .sources[1].description }'",
     "on-click": "pavucontrol"
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which dunst",
-    "exec": "dunst",
-    "escape": true
   },
   "custom/playerctl": {
     "format": "{icon} {0}",
