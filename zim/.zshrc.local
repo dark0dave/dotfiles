@@ -60,9 +60,7 @@ alias gf='git fetch -vfpt --update-shallow --all'
 alias gfp='gf && git branch | grep -v "*" | xargs -I {} git branch -D {}'
 alias gas='git add -vA && git status'
 
-if uwsm check may-start; then
-  exec uwsm start hyprland.desktop
-fi
+which uwsm &>/dev/null && uwsm check may-start && exec uwsm start hyprland.desktop
 
 # Nixshell zsh
 alias nix-shell='nix-shell --run $SHELL'

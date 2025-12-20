@@ -7,6 +7,7 @@ let
 in
 {
   nixpkgs.config.allowUnfree = true;
+  programs.nix-ld.enable = true;
   imports =
     [
       ./hardware-configuration.nix
@@ -52,7 +53,7 @@ in
       unifont
       noto-fonts-color-emoji
       corefonts
-      ubuntu_font_family
+      ubuntu-classic
       powerline-fonts
       font-awesome
       source-code-pro
@@ -84,31 +85,43 @@ in
   #  keyMap = "us";
   #  useXkbConfig = true; # use xkb.options in tty.
   # };
-  # Enable the X11 windowing system.
-  xdg.icons.enable = true;
-  # https://wiki.nixos.org/wiki/Category:Desktop_environment
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver = { 
+  programs.hyprland = {
     enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
   };
   # Thunar
   programs.xfconf.enable = true;
-  programs.thunar.enable = true;
-  programs.thunar.plugins = with pkgs.xfce; [
-    thunar-archive-plugin
-    thunar-media-tags-plugin
-    thunar-volman
-  ];
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-media-tags-plugin
+      thunar-volman
+    ];
+  };
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
-  services.displayManager.defaultSession = "xfce";
+  services.displayManager.defaultSession = "hyprland";
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config = {
+    common = {
+      default = [
+        "hyprland"
+      ];
+    };
+      hyprland = {
+        default = [ "hyprland" ];
+        "org.freedesktop.impl.portal.InputCapture" = [
+          "kde"
+        ];
+        "org.freedesktop.impl.portal.RemoteDesktop" = [
+          "kde"
+        ];
+      };
+    };
+    extraPortals = [
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
   };
   # Dark theme
   # https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/-/blob/main/schemas/org.gnome.desktop.interface.gschema.xml.in?ref_type=heads
@@ -197,6 +210,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     amberol
+    audacity
     btop
     caffeine-ng
     candy-icons
@@ -210,45 +224,59 @@ in
     gimp
     gitFull
     gparted
+    grim
     helix
+    hyprshot
+    jq
     kitty
     unstable.legcord
     libreoffice-fresh
+    libva
     librewolf
     lsof
+    lutris
+    nixpkgs-fmt
     material-design-icons
+    obsidian
     oreo-cursors-plus
     p7zip-rar
     protontricks
     podman
     popcorntime
     protonmail-desktop
+    playerctl
+    pwvucontrol
     qbittorrent-enhanced
+    redshift
     rename
     rofi-unwrapped
     signal-desktop
     stow
     sweet-folders
+    slurp
     texliveFull
     unstable.deskflow
+    unzip
     unstable.nexusmods-app
     vlc
     vscodium
+    waybar
     wezterm
+    weidu
+    wl-clipboard-rs
+    wf-recorder
     wget
     xarchiver
-    xdg-desktop-portal-xapp
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
     yt-dlp
     zim
   ];
   services.ollama = {
     enable = true;
     acceleration = "rocm";
-    environmentVariables = {
-      HCC_AMDGPU_TARGET = "gfx110"; # used to be necessary, but doesn't seem to anymore
-    };
-    rocmOverrideGfx = "11.0.2";
   };
+  services.open-webui.enable = true;
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.steam = {
@@ -294,6 +322,7 @@ in
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
   #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05";
+  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  system.stateVersion = "25.11";
 }

@@ -112,7 +112,7 @@
     "interval": 1
   },
   "pulseaudio": {
-    "on-click": "flatpak run com.saivert.pwvucontrol",
+    "on-click": "pwvucontrol",
     "format": "<span color='#f7768e'> </span> {volume}%",
     "format-muted": "<span color='#f7768e'>🔇</span> {volume}"
   },
