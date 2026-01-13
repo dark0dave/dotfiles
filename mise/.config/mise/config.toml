@@ -1,5 +1,9 @@
 [tools]
-bun = "latest"
+"github:denoland/deno" = { version = "latest", asset_pattern = "*x86_64*linux*.zip" }
+"http:zig" = { version = "latest", url = "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz" }
+deno = "latest"
+elixir = "latest"
+gh = "latest"
 go = "latest"
 java = "21"
 jq = "latest"
@@ -9,14 +13,8 @@ opam = "2.3.0"
 opentofu = "latest"
 python = "3.12"
 rust = "latest"
-terragrunt = "latest"
-"http:zig" = { version = "0.15.1", url = "https://ziglang.org/download/0.15.1/zig-x86_64-linux-0.15.1.tar.xz" }
-ant = "latest"
-gh = "latest"
-elixir = "latest"
 yarn = "4.6.0"
 
 [settings]
 experimental = true
 lockfile = true
-

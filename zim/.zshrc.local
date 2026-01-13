@@ -27,6 +27,7 @@ AZURE_CORE_COLLECT_TELEMETRY=0
 # Aliases
 alias pbcopy=wl-copy
 alias weather='curl "https://wttr.in/?format=4"'
+alias mv='rsync -aP --remove-source-files'
 
 # Direnv
 eval "$(direnv hook zsh)"
@@ -34,7 +35,6 @@ eval "$(direnv hook zsh)"
 # Mise
 ASDF_RUBY_BUILD_VERSION=master
 which mise &>/dev/null && eval "$(mise activate zsh)" || true
-which mise &>/dev/null && PATH="$HOME/.local/share/mise/shims:$PATH" || true
 
 # open tofu
 [[ ! -f ${HOME}/.cache/opentofu ]] && mkdir -p "${HOME}/.cache/opentofu"
