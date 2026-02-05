@@ -44,7 +44,7 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager"
+    "on-click": "kitty --class nmwui bluetui"
   },
   "network": {
     "format": "{ifname}",
@@ -112,7 +112,7 @@
     "interval": 1
   },
   "pulseaudio": {
-    "on-click": "pwvucontrol",
+    "on-click": "bash -c 'flatpak run com.saivert.pwvucontrol'",
     "format": "<span color='#f7768e'> </span> {volume}%",
     "format-muted": "<span color='#f7768e'>🔇</span> {volume}"
   },
@@ -135,7 +135,7 @@
     "interval": 15,
     "justify": "center",
     "exec": "pactl -f json list 2>/dev/null | jq -rc '{ \"text\": .sources[1].volume.\"front-right\".value_percent, \"tooltip\": .sources[1].description }'",
-    "on-click": "pavucontrol"
+    "on-click": "flatpak run com.saivert.pwvucontrol"
   },
   "custom/playerctl": {
     "format": "{icon} {0}",

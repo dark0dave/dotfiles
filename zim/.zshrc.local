@@ -17,7 +17,10 @@ SAVEHIST=5000000            #Number of history entries to save to disk
 setopt appendhistory     #Append history to the history file (no overwriting)
 setopt sharehistory      #Share history across terminals
 setopt incappendhistory  #Immediately append to the history file, not just when a term is killed
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insentive match
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insentive match
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+setopt MENU_COMPLETE
 
 # Global opt out https://consoledonottrack.com/
 DO_NOT_TRACK=1
@@ -56,8 +59,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
 ZSH_HIGHLIGHT_STYLES[comment]='fg=grey'
 
 # Git Alias
-alias gf='git fetch -vfpt --update-shallow --all'
-alias gfp='gf && git branch | grep -v "*" | xargs -I {} git branch -D {}'
+alias gf='git remote | xargs -P 5 -I {} git fetch -vfpt --update-shallow {}'
+alias gfp='gf && git branch | grep -v "*" | xargs -P 5 -I {} git branch -D {}'
 alias gas='git add -vA && git status'
 
 which uwsm &>/dev/null && uwsm check may-start && exec uwsm start hyprland.desktop
