@@ -30,7 +30,8 @@ AZURE_CORE_COLLECT_TELEMETRY=0
 # Aliases
 alias pbcopy=wl-copy
 alias weather='curl "https://wttr.in/?format=4"'
-alias mv='rsync -aP --remove-source-files'
+alias cp='rsync -avh --progress --stats'
+alias mv='rsync -avh --progress --stats --remove-source-files'
 
 # Direnv
 eval "$(direnv hook zsh)"
@@ -53,7 +54,10 @@ alias docker=podman
 alias docker-compose=podman-compose
 
 # QT https://wiki.archlinux.org/title/Wayland#Qt
-# QT_QPA_PLATFORM="wayland;xcb"
+QT_QPA_PLATFORM="wayland"
+GTK_THEME=adw-gtk3-dark
+GTK2_RC_FILES=/usr/share/themes/adw-gtk3-dark/gtk-3.0
+QT_STYLE_OVERRIDE=adw-gtk3-dark
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
 ZSH_HIGHLIGHT_STYLES[comment]='fg=grey'
