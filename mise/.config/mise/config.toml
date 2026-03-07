@@ -1,17 +1,13 @@
 [tools]
-"github:denoland/deno" = { version = "latest", asset_pattern = "*x86_64*linux*.zip" }
 "http:zig" = { version = "latest", url = "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz" }
 deno = "latest"
-elixir = "latest"
 gh = "latest"
 go = "latest"
 java = "21"
 jq = "latest"
 kubectl = "latest"
-node = "latest"
 opam = "2.3.0"
 opentofu = "latest"
-yarn = "4.6.0"
 pkl = "latest"
 hk = "latest"
 
