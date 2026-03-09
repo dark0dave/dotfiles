@@ -1,11 +1,12 @@
 # The syntax is "key = value". The whitespace around the
 # equals doesn't matter.
-background = 000000
+background = 11121d
 foreground = ffffff
 
 keybind = ctrl+z=close_surface
 keybind = shift+ctrl+'=new_split:right
+keybind = shift+ctrl+2=new_split:down
 
 font-family = JetBrainsMono Nerd Font
-font-size = 20
+font-size = 22
 scrollback-limit = 100000000

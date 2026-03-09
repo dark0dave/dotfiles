@@ -3,7 +3,7 @@
 let
   unstableTarball =
     fetchTarball
-      https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
+      https://github.com/NixOS/nixpkgs/archive/nixos-unstable-small.tar.gz;
 in
 {
   nixpkgs.config.allowUnfree = true;
@@ -41,6 +41,9 @@ in
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ALL = "en_US.UTF-8"; # This overrides all other LC_* settings.
+  };
   # https://search.nixos.org/options?channel=24.11&from=0&size=50&sort=relevance&type=packages&query=fonts
   fonts = {
     fontDir.enable = true;
@@ -185,7 +188,6 @@ in
   }];
   services.tor.enable = true;
   services.tor.client.enable = true;
-  services.flatpak.enable = true;
   environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
   services.mullvad-vpn.package = pkgs.unstable.mullvad-vpn;
   services.mullvad-vpn.enable = true;
@@ -206,6 +208,8 @@ in
     extraGroups = [ "podman" ];
   };
 
+    programs.direnv.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -214,60 +218,63 @@ in
     btop
     caffeine-ng
     candy-icons
-    cifs-utils
-    direnv
+    deskflow
     element-desktop
+    elkhound
     ffmpeg
     freetube
     fzf
+    gcc14
     gh
     gimp
     gitFull
+    gnumake
     gparted
     grim
     helix
     hyprshot
     jq
-    kitty
-    unstable.legcord
     libreoffice-fresh
-    libva
     librewolf
+    libva
     lsof
     lutris
-    nixpkgs-fmt
     material-design-icons
-    obsidian
+    nixpkgs-fmt
+    ocaml-ng.ocamlPackages_4_14_unsafe_string.ocaml
     oreo-cursors-plus
     p7zip-rar
-    protontricks
+    playerctl
     podman
     popcorntime
     protonmail-desktop
-    playerctl
+    protontricks
     pwvucontrol
+    python312
     qbittorrent-enhanced
     redshift
     rename
     rofi-unwrapped
     signal-desktop
+    slack
+    slurp
     stow
     sweet-folders
-    slurp
     texliveFull
-    unstable.deskflow
-    unzip
-    unstable.nexusmods-app
+    ungoogled-chromium
+    unstable.ghostty
+    unstable.legcord
     vlc
     vscodium
     waybar
-    wezterm
     weidu
-    wl-clipboard-rs
+    wezterm
     wf-recorder
     wget
+    wl-clipboard-rs
     xarchiver
     xdg-desktop-portal
+    xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     yt-dlp
     zim
