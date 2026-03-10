@@ -5,6 +5,7 @@
     "hyprland/workspaces",
     "cpu",
     "memory",
+    "disk",
     "tray"
   ],
   "modules-center": [
@@ -13,8 +14,8 @@
   ],
   "modules-right": [
     "bluetooth",
-    "custom/mic",
-    "pulseaudio",
+    "wireplumber#sink",
+    "wireplumber#source",
     "battery",
     "network"
   ],
@@ -44,7 +45,7 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "kitty --class nmwui bluetui"
+    "on-click": "ghostty -e bluetui"
   },
   "network": {
     "format": "{ifname}",
@@ -111,14 +112,23 @@
     "format-charging": "<span color='#a8cd76'></span> {capacity}%",
     "interval": 1
   },
-  "pulseaudio": {
+  "wireplumber#sink": {
+    "format": " <span color='#f7768e'>{icon}</span> {volume}% ",
+    "format-muted": " 🔇 {volume}% ",
+    "format-icons": ["", "", ""],
     "on-click": "pwvucontrol",
-    "format": "<span color='#f7768e'> </span> {volume}%",
-    "format-muted": "<span color='#f7768e'>🔇</span> {volume}"
+    "scroll-step": 5
+  },
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": " <span color='#f7768e'></span> {volume}% ",
+    "format-muted": "",
+    "on-click": "pwvucontrol",
+    "scroll-step": 5
   },
   "memory": {
     "format": "<span foreground='#9ece6a'>🎟</span> {}%",
-    "on-click": "kitty htop"
+    "on-click": "ghostty -e htop"
   },
   "tray": {
     "icon-size": 20,
@@ -128,14 +138,9 @@
   "cpu": {
     "format": "<span foreground='#ff005f'></span>  {usage}%"
   },
-  "custom/mic": {
-    "format": "<span color='#f7768e'>🎙</span> {}",
-    "alt-format": "{}",
-    "return-type": "json",
-    "interval": 15,
-    "justify": "center",
-    "exec": "pactl -f json list 2>/dev/null | jq -rc '{ \"text\": .sources[1].volume.\"front-right\".value_percent, \"tooltip\": .sources[1].description }'",
-    "on-click": "flatpak run com.saivert.pwvucontrol"
+  "disk": {
+    "interval": 30,
+    "format": "<span>🖴 {percentage_used}%</span>"
   },
   "custom/playerctl": {
     "format": "{icon} {0}",

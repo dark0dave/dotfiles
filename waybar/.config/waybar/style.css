@@ -40,7 +40,7 @@ window#waybar {
   color: #3ac3de;
 }
 
-#clock, #bluetooth, #battery, #cpu, #custom-mic, #pulseaudio, #pulseaudio-slider, #network, #tray, #memory, #custom-notification, #custom-playerctl, #custom-weather {
+#clock, #bluetooth, #battery, #cpu, #network, #tray, #memory, #disk, #custom-notification, #custom-playerctl, #custom-weather {
   border-radius: 10px;
   background-color: #191a24;
   color: #c0caf5;
@@ -51,10 +51,6 @@ window#waybar {
   padding-bottom: 1px;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-#custom-mic {
-  padding-bottom: 3px;
 }
 
 @keyframes blink {
@@ -77,9 +73,4 @@ window#waybar {
 #tray {
   padding-right: 8px;
   padding-left: 10px;
-}
-
-#custom-mic, #pulseaudio {
-  font-size: 16.5px;
-  font-weight: bold;
 }
