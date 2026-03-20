@@ -63,6 +63,8 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=grey'
 alias gf='git remote | xargs -P 5 -I {} git fetch -vfpt --update-shallow {}'
 alias gfp='gf && git branch | grep -v "*" | xargs -P 5 -I {} git branch -D {}'
 alias gas='git add -vA && git status'
+alias ghpr='git rev-parse --abbrev-ref HEAD | xargs -I {} git push origin {} && gh pr create -f'
+alias ghprm='ghpr && gh pr merge --auto -m'
 
 which uwsm &>/dev/null && uwsm check may-start && exec uwsm start hyprland.desktop
 
