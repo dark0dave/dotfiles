@@ -1,10 +1,5 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 { config, lib, pkgs, ... }:
-let
-  unstableTarball =
-    fetchTarball
-      https://github.com/NixOS/nixpkgs/archive/nixos-unstable-small.tar.gz;
-in
 {
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
@@ -28,13 +23,6 @@ in
   ];
   networking.resolvconf.enable = false;
   networking.networkmanager.ethernet.macAddress = "random";
-  nixpkgs.config = {
-    packageOverrides = pkgs: {
-      unstable = import unstableTarball {
-        config = config.nixpkgs.config;
-      };
-    };
-  };
   time.timeZone = "Europe/London";
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -114,17 +102,8 @@ in
     };
       hyprland = {
         default = [ "hyprland" ];
-        "org.freedesktop.impl.portal.InputCapture" = [
-          "kde"
-        ];
-        "org.freedesktop.impl.portal.RemoteDesktop" = [
-          "kde"
-        ];
       };
     };
-    extraPortals = [
-      pkgs.kdePackages.xdg-desktop-portal-kde
-    ];
   };
   # Dark theme
   # https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/-/blob/main/schemas/org.gnome.desktop.interface.gschema.xml.in?ref_type=heads
@@ -134,23 +113,16 @@ in
       [Settings]
       gtk-error-bell=false
       gtk-application-prefer-dark-theme=1
-      gtk-theme='Material-Black-Cherry'
-      icon-theme='Sweet-Red-Filled'
-      monospace-font-name='Noto Mono for Powerline 12'
-      clock-show-seconds=true
-      color-scheme='prefer-dark'
-      cursor-theme='oreo_spark_red_bordered_cursors'
+      gtk-theme-name='Material-Black-Cherry'
     '';
     "xdg/gtk-4.0/settings.ini".text = ''
       [Settings]
       gtk-error-bell=false
       gtk-application-prefer-dark-theme=1
-      gtk-theme='Material-Black-Cherry'
-      icon-theme='Sweet-Red-Filled'
-      monospace-font-name='Noto Mono for Powerline 12'
-      clock-show-seconds=true
-      color-scheme='prefer-dark'
-      cursor-theme='oreo_spark_red_bordered_cursors'
+      gtk-theme-name=Material-Black-Cherry
+      gtk-icon-theme-name=Sweet-Red-Filled
+      gtk-font-name='Noto Mono for Powerline 12'
+      gtk-cursor-theme-name=oreo_spark_red_bordered_cursors
     '';
   };
   # Configure keymap in X11
@@ -189,7 +161,7 @@ in
   services.tor.enable = true;
   services.tor.client.enable = true;
   environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
-  services.mullvad-vpn.package = pkgs.unstable.mullvad-vpn;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
   services.mullvad-vpn.enable = true;
   programs.zsh.enable = true;
   virtualisation.containers.enable = true;
@@ -224,7 +196,6 @@ in
     ffmpeg
     freetube
     fzf
-    gcc14
     gh
     gimp
     gitFull
@@ -241,7 +212,6 @@ in
     lutris
     material-design-icons
     nixpkgs-fmt
-    ocaml-ng.ocamlPackages_4_14_unsafe_string.ocaml
     oreo-cursors-plus
     p7zip-rar
     playerctl
@@ -250,8 +220,6 @@ in
     protonmail-desktop
     protontricks
     pwvucontrol
-    python312
-    qbittorrent-enhanced
     redshift
     rename
     rofi-unwrapped
@@ -262,8 +230,8 @@ in
     sweet-folders
     texliveFull
     ungoogled-chromium
-    unstable.ghostty
-    unstable.legcord
+    ghostty
+    legcord
     vlc
     vscodium
     waybar
@@ -274,7 +242,6 @@ in
     wl-clipboard-rs
     xarchiver
     xdg-desktop-portal
-    xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     yt-dlp
     zim
