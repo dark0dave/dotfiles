@@ -122,7 +122,6 @@
       gtk-theme-name=Material-Black-Cherry
       gtk-icon-theme-name=Sweet-Red-Filled
       gtk-font-name='Noto Mono for Powerline 12'
-      gtk-cursor-theme-name=oreo_spark_red_bordered_cursors
     '';
   };
   # Configure keymap in X11
@@ -210,10 +209,12 @@
     libva
     lsof
     lutris
+    mate.engrampa
     material-design-icons
     nixpkgs-fmt
     oreo-cursors-plus
     p7zip-rar
+    picard
     playerctl
     podman
     popcorntime
@@ -240,9 +241,9 @@
     wf-recorder
     wget
     wl-clipboard-rs
-    xarchiver
     xdg-desktop-portal
     xdg-desktop-portal-hyprland
+    xfce.ristretto
     yt-dlp
     zim
   ];
