@@ -55,9 +55,6 @@ GOPATH=$HOME/.go
 alias docker=podman
 alias docker-compose=podman-compose
 
-# QT https://wiki.archlinux.org/title/Wayland#Qt
-QT_QPA_PLATFORM="wayland"
-
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
 ZSH_HIGHLIGHT_STYLES[comment]='fg=grey'
 
@@ -68,7 +65,7 @@ alias gas='git add -vA && git status'
 alias ghpr='git rev-parse --abbrev-ref HEAD | xargs -I {} git push origin {} && gh pr create -f'
 alias ghprm='ghpr && gh pr merge --auto -m'
 
-which uwsm &>/dev/null && uwsm check may-start && exec uwsm start hyprland.desktop
+#which uwsm &>/dev/null && uwsm check may-start && exec uwsm start hyprland.desktop
 
 # Nixshell zsh
 alias nix-shell='nix-shell --run $SHELL'

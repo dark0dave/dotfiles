@@ -2,6 +2,7 @@
   "layer": "top",
   "modules-left": [
     "custom/arch",
+    "niri/workspaces",
     "hyprland/workspaces",
     "cpu",
     "memory",
@@ -86,6 +87,16 @@
       "8": "8",
       "9": "9",
       "10": "10"
+    }
+  },
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "browser": "",
+      "discord": "",
+      "chat": "<b></b>",
+      "active": "",
+      "default": ""
     }
   },
   "clock": {
