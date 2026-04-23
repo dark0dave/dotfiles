@@ -17,6 +17,7 @@ SAVEHIST=5000000            #Number of history entries to save to disk
 setopt appendhistory     #Append history to the history file (no overwriting)
 setopt sharehistory      #Share history across terminals
 setopt incappendhistory  #Immediately append to the history file, not just when a term is killed
+setopt HIST_IGNORE_ALL_DUPS
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insentive match
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -31,7 +32,8 @@ AZURE_CORE_COLLECT_TELEMETRY=0
 alias pbcopy=wl-copy
 alias weather='curl "https://wttr.in/?format=4"'
 alias cp='rsync -avh --progress --stats'
-alias mv='rsync -avh --progress --stats --remove-source-files'
+alias unzip='7z x'
+alias lsa='exa --git --extended --icons=always -lho --no-permissions --group-directories-first --time-style iso'
 
 # Direnv
 eval "$(direnv hook zsh)"

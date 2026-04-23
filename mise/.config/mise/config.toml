@@ -9,7 +9,7 @@ kubectl = "latest"
 opam = "2.3.0"
 opentofu = "latest"
 pkl = "latest"
-hk = "latest"
+hk = "1.43.0"
 
 [settings]
 experimental = true
