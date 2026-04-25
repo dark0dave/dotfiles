@@ -230,23 +230,15 @@ animations {
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
-}
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
 }
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+}
+window-rule {
+    match is-focused=true
 }
 // Example: block out two password managers from screen capture.
 /-window-rule {
@@ -432,8 +424,8 @@ binds {
     Mod+Ctrl+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
 
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    // Mod+F { maximize-column; }
+    // Mod+Shift+F { fullscreen-window; }
 
     // While maximize-column leaves gaps and borders around the window,
     // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
