@@ -114,6 +114,8 @@
       gtk-error-bell=false
       gtk-application-prefer-dark-theme=1
       gtk-theme-name='Material-Black-Cherry'
+      gtk-icon-theme-name=Sweet-Red-Filled
+      gtk-font-name='Noto Mono for Powerline 12'
     '';
     "xdg/gtk-4.0/settings.ini".text = ''
       [Settings]

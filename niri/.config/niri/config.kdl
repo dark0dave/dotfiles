@@ -62,7 +62,7 @@ output "eDP-1" {
     // off
     // mode "2256x1504@60"
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1.5
+    scale 1.25
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
@@ -199,6 +199,7 @@ environment {
     QT_QPA_PLATFORM "wayland"
     DISPLAY ":0"
     GTK_THEME "Sweet-Ambar-Blue-Dark"
+    _JAVA_AWT_WM_NONREPARENTING "1"
 }
 cursor {
     xcursor-theme "breeze_cursors"
@@ -278,8 +279,8 @@ binds {
     Ctrl+Mod+4 { spawn-sh "hyprshot -m region"; }
     // Cycle through widths set in preset-column-widths.
     Mod+R { switch-preset-column-width; }
-    // Cycling through the presets in reverse order is also possible.
     Mod+Shift+R { switch-preset-column-width-back; }
+    Mod+Shift+F { maximize-column; }
     // Movement
     Mod+Shift+1 { focus-workspace 1; }
     Mod+Shift+2 { focus-workspace 2; }
