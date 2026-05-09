@@ -1,15 +1,11 @@
 [tools]
-"http:zig" = { version = "latest", url = "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz" }
 deno = "latest"
 gh = "latest"
-go = "latest"
-java = "21"
+java = "25"
 jq = "latest"
 kubectl = "latest"
 opam = "2.3.0"
 opentofu = "latest"
-pkl = "latest"
-hk = "1.43.0"
 
 [settings]
 experimental = true

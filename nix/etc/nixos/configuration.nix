@@ -113,7 +113,7 @@
       [Settings]
       gtk-error-bell=false
       gtk-application-prefer-dark-theme=1
-      gtk-theme-name='Material-Black-Cherry'
+      gtk-theme-name=Material-Black-Cherry
       gtk-icon-theme-name=Sweet-Red-Filled
       gtk-font-name='Noto Mono for Powerline 12'
     '';
@@ -181,7 +181,7 @@
     extraGroups = [ "podman" ];
   };
 
-    programs.direnv.enable = true;
+  programs.direnv.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

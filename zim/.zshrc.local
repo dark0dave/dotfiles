@@ -18,9 +18,7 @@ setopt appendhistory     #Append history to the history file (no overwriting)
 setopt sharehistory      #Share history across terminals
 setopt incappendhistory  #Immediately append to the history file, not just when a term is killed
 setopt HIST_IGNORE_ALL_DUPS
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insentive match
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insentive match
 setopt MENU_COMPLETE
 
 # Global opt out https://consoledonottrack.com/
@@ -66,9 +64,6 @@ alias ghpr='git rev-parse --abbrev-ref HEAD | xargs -I {} git push origin {} && 
 alias ghprm='ghpr && gh pr merge --auto -m'
 
 #which uwsm &>/dev/null && uwsm check may-start && exec uwsm start hyprland.desktop
-
-# Nixshell zsh
-alias nix-shell='nix-shell --run $SHELL'
 
 # fzf
 source <(fzf --zsh)
