@@ -29,8 +29,6 @@ AZURE_CORE_COLLECT_TELEMETRY=0
 # Aliases
 alias pbcopy=wl-copy
 alias weather='curl "https://wttr.in/?format=4"'
-alias cp='rsync -avh --progress --stats'
-alias unzip='7z x'
 alias lsa='exa --git --extended --icons=always -lho --no-permissions --group-directories-first --time-style iso'
 
 # Direnv
@@ -62,8 +60,6 @@ alias gfp='gf && git branch | grep -v "*" | xargs -P 5 -I {} git branch -D {}'
 alias gas='git add -vA && git status'
 alias ghpr='git rev-parse --abbrev-ref HEAD | xargs -I {} git push origin {} && gh pr create -f'
 alias ghprm='ghpr && gh pr merge --auto -m'
-
-#which uwsm &>/dev/null && uwsm check may-start && exec uwsm start hyprland.desktop
 
 # fzf
 source <(fzf --zsh)

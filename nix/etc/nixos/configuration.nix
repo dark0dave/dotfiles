@@ -1,20 +1,43 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  nixpkgs.overlays = [
+  (self: super: let
+    repo = super.fetchFromGitHub {
+      owner = "3l0w";
+      repo = "xdg-desktop-portal-hyprland";
+      rev = "feat/input-capture-impl";
+      sha256 = "sha256-UcuAsZtnT8LcYTiKpM7Mq9dySKeQUs4n5JU+BHkDfgU=";
+    };
+    in {
+      xdg-desktop-portal-hyprland = super.callPackage (repo + "/nix/default.nix") {
+        src = repo;
+        version = "feat/input-capture-impl";
+      };
+    })
+  ];
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
-  imports =
-    [
-      ./hardware-configuration.nix
-   ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
   # Cleanup
-  nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than 5d";
-  nix.gc.automatic = true;
+  nix.settings.auto-optimise-store = true;
+  nix.settings.download-buffer-size = 1073741824;
+  nix.gc = {
+    automatic = true;
+    dates = "daily"; # Run every day at 03:15
+    options = "--delete-older-than 3d"; # Keep only last 3 days (very aggressive)
+  };
   # Use the systemd-boot EFI boot loader.
   networking.hostName = "nixos";
-  networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   networking.enableIPv6 = false;
   networking.networkmanager.dns = "none";
   networking.nameservers = [
@@ -30,27 +53,39 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
-    LC_ALL = "en_US.UTF-8"; # This overrides all other LC_* settings.
+    LC_ALL = "en_US.UTF-8"; # This overrides all other LC_* settings
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
   # https://search.nixos.org/options?channel=24.11&from=0&size=50&sort=relevance&type=packages&query=fonts
   fonts = {
     fontDir.enable = true;
     enableDefaultPackages = true;
-    packages = with pkgs; [
-      dejavu_fonts
-      freefont_ttf
-      gyre-fonts # TrueType substitutes for standard PostScript fonts
-      liberation_ttf
-      unifont
-      noto-fonts-color-emoji
-      corefonts
-      ubuntu-classic
-      powerline-fonts
-      font-awesome
-      source-code-pro
-      noto-fonts
-      noto-fonts-cjk-sans
-    ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts) ;
+    packages =
+      with pkgs;
+      [
+        dejavu_fonts
+        freefont_ttf
+        gyre-fonts # TrueType substitutes for standard PostScript fonts
+        liberation_ttf
+        unifont
+        noto-fonts-color-emoji
+        corefonts
+        ubuntu-classic
+        powerline-fonts
+        font-awesome
+        source-code-pro
+        noto-fonts
+        noto-fonts-cjk-sans
+      ]
+      ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
     fontconfig = {
       enable = true;
@@ -78,6 +113,7 @@
   # };
   programs.hyprland = {
     enable = true;
+    xwayland.enable = true;
   };
   # Thunar
   programs.xfconf.enable = true;
@@ -94,16 +130,6 @@
   services.displayManager.defaultSession = "hyprland";
   xdg.portal = {
     enable = true;
-    config = {
-    common = {
-      default = [
-        "hyprland"
-      ];
-    };
-      hyprland = {
-        default = [ "hyprland" ];
-      };
-    };
   };
   # Dark theme
   # https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/-/blob/main/schemas/org.gnome.desktop.interface.gschema.xml.in?ref_type=heads
@@ -113,9 +139,7 @@
       [Settings]
       gtk-error-bell=false
       gtk-application-prefer-dark-theme=1
-      gtk-theme-name=Material-Black-Cherry
-      gtk-icon-theme-name=Sweet-Red-Filled
-      gtk-font-name='Noto Mono for Powerline 12'
+      gtk-theme-name='Material-Black-Cherry'
     '';
     "xdg/gtk-4.0/settings.ini".text = ''
       [Settings]
@@ -146,22 +170,16 @@
     createHome = false;
     uid = 1000;
     home = "/home/x";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
   };
-  programs.dconf.profiles.gdm.databases = [{
-   settings."org/gnome/settings-daemon/plugins/power" = {
-    # 30 seconds until automatic suspend
-    idle-delay = lib.gvariant.mkInt32 0;
-    sleep-inactive-ac-timeout = lib.gvariant.mkInt32 0;
-    sleep-inactive-ac-type = "nothing";
-   };
-  }];
   services.tor.enable = true;
   services.tor.client.enable = true;
-  environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
   services.mullvad-vpn.enable = true;
   programs.zsh.enable = true;
@@ -198,6 +216,7 @@
     freetube
     fzf
     gh
+    ghostty
     gimp
     gitFull
     gnumake
@@ -206,14 +225,18 @@
     helix
     hyprshot
     jq
+    legcord
     libreoffice-fresh
     librewolf
     libva
     lsof
+    lua
     lutris
     mate.engrampa
     material-design-icons
+    mpv
     nixpkgs-fmt
+    obsidian
     oreo-cursors-plus
     p7zip-rar
     picard
@@ -223,7 +246,6 @@
     protonmail-desktop
     protontricks
     pwvucontrol
-    redshift
     rename
     rofi-unwrapped
     signal-desktop
@@ -232,10 +254,9 @@
     stow
     sweet-folders
     texliveFull
+    tldr
     ungoogled-chromium
-    ghostty
-    legcord
-    vlc
+    unzip
     vscodium
     waybar
     weidu
@@ -244,7 +265,6 @@
     wget
     wl-clipboard-rs
     xdg-desktop-portal
-    xdg-desktop-portal-hyprland
     xfce.ristretto
     yt-dlp
     zim
@@ -259,9 +279,10 @@
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    dedicatedServer.openFirewall = false; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     gamescopeSession.enable = true;
+    extraCompatPackages = [pkgs.proton-ge-bin];
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -300,6 +321,9 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   system.stateVersion = "25.11";
 }

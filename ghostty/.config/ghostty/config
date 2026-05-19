@@ -2,6 +2,7 @@
 # equals doesn't matter.
 background = 000000
 foreground = ffffff
+unfocused-split-opacity = 1
 
 # https://ghostty.org/docs/config/keybind/reference
 keybind = shift+ctrl+w=close_surface
