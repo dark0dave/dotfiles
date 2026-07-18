@@ -53,7 +53,6 @@ element-desktop
 element-web
 endeavour
 evince
-ex-vi-compat
 exfatprogs
 eza
 f2fs-tools
@@ -68,6 +67,7 @@ fuse-overlayfs
 fuse2
 fzf
 gamemode
+ghostty
 gimp
 git-delta
 git-lfs
@@ -85,7 +85,6 @@ haveged
 helix
 htop
 hypridle
-hyprland
 hyprlock
 hyprpaper
 hyprpicker
@@ -98,7 +97,6 @@ inxi
 iwd
 jpegoptim
 jq
-kooha
 less
 lib32-gtk3
 lib32-libxslt
@@ -132,6 +130,7 @@ nano
 nano-syntax-highlighting
 networkmanager
 nfs-utils
+niri
 nix
 noto-fonts
 noto-fonts-emoji
@@ -139,7 +138,6 @@ noto-fonts-extra
 nss-mdns
 ntp
 nvtop
-ollama-rocm
 openresolv
 openssh
 optipng
@@ -155,6 +153,7 @@ pipewire-pulse
 pipewire-session-manager
 pkgfile
 podman
+polkit-gnome
 postgresql-libs
 power-profiles-daemon
 powerline-fonts
@@ -171,6 +170,7 @@ s-nail
 sassc
 scdoc
 seahorse
+signal-desktop
 slurp
 sof-firmware
 squashfs-tools
@@ -199,7 +199,6 @@ thunderbird
 timeshift
 tk
 tldr
-tmux
 tor
 ttf-dejavu
 ttf-droid
@@ -222,7 +221,6 @@ waybar
 webapp-manager
 wget
 which
-wine-staging
 wireguard-tools
 wireless-regdb
 wl-clipboard
@@ -230,7 +228,9 @@ wlroots0.18
 wmctrl
 woff2-font-awesome
 wpa_supplicant
-xdg-desktop-portal-hyprland
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
 xdg-utils
+xwayland-satellite
 zsh-autosuggestions
 zsh-completions
