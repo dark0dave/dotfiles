@@ -2,9 +2,6 @@
 aardvark-dns
 acpi
 acpid
-adobe-source-han-sans-cn-fonts
-adobe-source-han-sans-jp-fonts
-adobe-source-han-sans-kr-fonts
 adobe-source-sans-fonts
 adw-gtk-theme
 alacritty
@@ -23,15 +20,12 @@ bluetui
 bluez-utils
 brightnessctl
 btop
-btrfs-progs
-btrfsmaintenance
 bzip2
 cataclysm-dda
 chafa
 collision
 containerd
 coreutils
-cowsay
 cpupower
 cronie
 cryptsetup
@@ -95,8 +89,6 @@ ibus
 inetutils
 inxi
 iwd
-jpegoptim
-jq
 less
 lib32-gtk3
 lib32-libxslt
@@ -124,7 +116,6 @@ mdadm
 memtest86+
 memtest86+-efi
 mesa-utils
-mousepad
 mpv
 nano
 nano-syntax-highlighting
@@ -142,7 +133,6 @@ openresolv
 openssh
 optipng
 os-prober
-parallel
 perf
 perl
 perl-rename
@@ -164,7 +154,6 @@ qt5ct
 qt6-tools
 qt6ct
 rofi
-rqbit
 rsync
 s-nail
 sassc
@@ -174,7 +163,6 @@ signal-desktop
 slurp
 sof-firmware
 squashfs-tools
-sshfs
 stow
 sudo
 swaybg
@@ -189,16 +177,9 @@ texlive-latexextra
 texlive-latexrecommended
 texlive-xetex
 tftp-hpa
-thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-shares-plugin
-thunar-vcs-plugin
-thunar-volman
 thunderbird
 timeshift
 tk
-tldr
 tor
 ttf-dejavu
 ttf-droid
