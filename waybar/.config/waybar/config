@@ -124,7 +124,7 @@
     "interval": 1
   },
   "wireplumber#sink": {
-    "format": " <span color='#f7768e'>{icon}</span> {volume}% ",
+    "format": " <span color='#f7768e'>{icon}</span><span color='#ffff'>  {volume}% </span> ",
     "format-muted": " 🔇 {volume}% ",
     "format-icons": ["", "", ""],
     "on-click": "pwvucontrol",
@@ -132,8 +132,9 @@
   },
   "wireplumber#source": {
     "node-type": "Audio/Source",
-    "format": " <span color='#f7768e'></span> {volume}% ",
+    "format": " <span color='#f7768e'>{icon}</span><span color='#ffff'> {volume}% </span> ",
     "format-muted": "",
+    "format-icons": [""],
     "on-click": "pwvucontrol",
     "scroll-step": 5
   },
