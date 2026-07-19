@@ -35,7 +35,7 @@ alias lsa='exa --git --extended --icons=always -lho --no-permissions --group-dir
 eval "$(direnv hook zsh)"
 
 # Mise
-ASDF_RUBY_BUILD_VERSION=master
+which mise &>/dev/null && ASDF_RUBY_BUILD_VERSION=master
 which mise &>/dev/null && eval "$(mise activate zsh)" || true
 
 # open tofu
