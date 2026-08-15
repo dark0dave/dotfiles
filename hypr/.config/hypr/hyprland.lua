@@ -11,7 +11,7 @@ hl.monitor({
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
-local terminal    = "ghostty"
+local terminal    = "alacritty"
 local fileManager = "thunar"
 local menu        = "rofi -show drun"
 -------------------
@@ -109,7 +109,6 @@ hl.config({
         middle_click_paste         = false,
         focus_on_activate          = false,
         initial_workspace_tracking = 1,
-        bell_sound                 = "none",
     },
 })
 ---------------
@@ -134,7 +133,7 @@ hl.config({
 hl.gesture({
     fingers                  = 3,
     direction                = "horizontal",
-    action                   = "workspace"
+    action                   = "workspace",
     workspace_swipe_forever  = true,
     workspace_swipe_distance = 100,
     workspace_swipe_min_speed_to_force = 10,
@@ -149,7 +148,7 @@ hl.bind(mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd(menu))
 -- Screencap
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind("ALT + Print", hl.dsp.exec_cmd("hyprshot -m region"))
-hl.bind(mainMod .. "ALT + 4", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + ALT + 4", hl.dsp.exec_cmd("hyprshot -m region"))
 -- Control
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -218,16 +217,16 @@ hl.window_rule({
     no_focus = true,
 })
 hl.window_rule({
-  name = "Save"
+  name = "Save",
   match = {
     title = "^.*(Save File).*$",
-    float = true
+    float = true,
   }
 })
 hl.window_rule({
-  name = "Open"
+  name = "Open",
   match = {
     title = "^.*(Open File).*$",
-    float = true
+    float = true,
   }
 })
