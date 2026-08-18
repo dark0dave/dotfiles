@@ -2,7 +2,5 @@
 *.swp
 git-cliff
 changelog
-hypr/.config/hypr/monitors.conf
-hypr/.config/hypr/vpn.conf
-hypr/.config/hypr/window_rules.conf
+hypr/.config/hypr/monitors.lua
 .direnv

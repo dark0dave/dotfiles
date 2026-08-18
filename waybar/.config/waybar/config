@@ -2,7 +2,6 @@
   "layer": "top",
   "modules-left": [
     "custom/arch",
-    "niri/workspaces",
     "hyprland/workspaces",
     "cpu",
     "memory",

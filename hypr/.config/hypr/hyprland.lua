@@ -2,16 +2,11 @@
 ---- MONITORS ----
 ------------------
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "auto",
-})
+require("monitors")
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
-local terminal    = "alacritty"
+local terminal    = "ghostty"
 local fileManager = "thunar"
 local menu        = "rofi -show drun"
 -------------------
