@@ -85,11 +85,14 @@ helix
 htop
 hypridle
 hyprland
+hyprland-protocols
 hyprlock
 hyprpaper
 hyprpicker
 hyprshot
 hyprsunset
+hyprutils
+hyprwayland-scanner
 iagno
 ibus
 impala
@@ -98,12 +101,11 @@ inxi
 iwd
 jpegoptim
 jq
+kitty
 less
 lib32-gamemode
 lib32-gtk3
-lib32-libxslt
 lib32-ocl-icd
-lib32-v4l-utils
 lib32-vkd3d
 lib32-vulkan-radeon
 libappindicator
@@ -112,6 +114,10 @@ libqalculate
 libreoffice-still
 librewolf
 linux
+linux-firmware
+linux-firmware-amdgpu
+linux-firmware-intel
+linux-firmware-other
 linux-headers
 localsearch
 logrotate
@@ -156,6 +162,7 @@ pipewire-pulse
 pipewire-session-manager
 pkgconf
 pkgfile
+plymouth
 podman
 polkit-gnome
 postgresql-libs
@@ -185,6 +192,7 @@ swaybg
 swig
 sysfsutils
 systemd
+terminus-font
 texinfo
 texlive-fontsextra
 texlive-fontsrecommended
@@ -232,7 +240,6 @@ which
 wireguard-tools
 wireless-regdb
 wl-clipboard
-wlroots0.18
 wmctrl
 woff2-font-awesome
 wpa_supplicant
