@@ -1,11 +1,12 @@
 aura
 bibata-cursor-theme
+freetube-bin
 legcord-bin
 lib32-v4l-utils
 libva-vdpau-driver
 mkinitcpio-openswap
-mullvad-vpn-bin
-mullvad-vpn-daemon-bin
+pop-icon-theme-git
 proton-mail-bin
 slack-desktop-wayland
+ungoogled-chromium-bin
 vscodium-bin

@@ -58,7 +58,7 @@
     "tooltip-format-wifi": " {essid} ",
     "tooltip-format-ethernet": " {ipaddr}/{cidr} ",
     "tooltip-format-disconnected": "📵",
-    "on-click": "nmtui",
+    "on-click": "ghostty -e nmtui",
     "max-length": 10
   },
   "ext/workspaces": {

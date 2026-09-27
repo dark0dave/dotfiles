@@ -31,7 +31,8 @@ chafa
 collision
 containerd
 coreutils
-cosmic-greeter
+cosmic-files
+cosmic-icon-theme
 cpupower
 cronie
 cryptsetup
@@ -72,7 +73,6 @@ git-delta
 git-lfs
 gnuchess
 gobject-introspection
-gparted
 granite
 grim
 grub
@@ -134,6 +134,8 @@ memtest86+
 memtest86+-efi
 mesa-utils
 mpv
+mullvad-vpn
+mullvad-vpn-daemon
 nano
 nano-syntax-highlighting
 networkmanager
@@ -201,12 +203,6 @@ texlive-latexextra
 texlive-latexrecommended
 texlive-xetex
 tftp-hpa
-thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-shares-plugin
-thunar-vcs-plugin
-thunar-volman
 thunderbird
 timeshift
 tk
@@ -237,13 +233,13 @@ webapp-manager
 wezterm
 wget
 which
+winetricks
 wireguard-tools
 wireless-regdb
 wl-clipboard
 wmctrl
 woff2-font-awesome
 wpa_supplicant
-xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-utils
