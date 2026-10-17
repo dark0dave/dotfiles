@@ -203,7 +203,6 @@ texlive-latexextra
 texlive-latexrecommended
 texlive-xetex
 tftp-hpa
-thunderbird
 timeshift
 tk
 tor
@@ -220,10 +219,6 @@ ttf-noto-nerd
 usbutils
 uwsm
 vkd3d
-vlc
-vlc-plugin-mpeg2
-vlc-plugins-all
-vlc-plugin-x264
 vorbis-tools
 vulkan-headers
 vulkan-radeon
@@ -243,6 +238,5 @@ wpa_supplicant
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-utils
-xwayland-satellite
 zsh-autosuggestions
 zsh-completions
