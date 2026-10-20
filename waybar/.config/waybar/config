@@ -100,7 +100,7 @@
     "format": " <span color='#f7768e'>{icon}</span><span color='#ffff'>  {volume}% </span> ",
     "format-muted": " 🔇 {volume}% ",
     "format-icons": ["", "", ""],
-    "on-click": "pwvucontrol",
+    "on-click": "pwvucontrol || pavucontrol",
     "scroll-step": 5
   },
   "wireplumber#source": {
@@ -108,7 +108,7 @@
     "format": " <span color='#f7768e'>{icon}</span><span color='#ffff'> {volume}% </span> ",
     "format-muted": "",
     "format-icons": [""],
-    "on-click": "pwvucontrol",
+    "on-click": "pwvucontrol || pavucontrol",
     "scroll-step": 5
   },
   "memory": {
