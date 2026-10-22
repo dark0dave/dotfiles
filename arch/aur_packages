@@ -1,12 +1,10 @@
 aura
-bibata-cursor-theme
 freetube-bin
-lib32-v4l-utils
-libva-vdpau-driver
-mkinitcpio-openswap
-pop-icon-theme-git
-proton-mail-bin
+mullvad-tui-bin
+proton-mail
+pwvucontrol
 slack-desktop
 ungoogled-chromium-bin
+ungoogled-chromium-bin-debug
 vesktop-bin
 vscodium-bin
