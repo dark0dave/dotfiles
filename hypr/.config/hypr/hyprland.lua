@@ -18,6 +18,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("dbus-update-activation-environment --systemd --all")
   hl.exec_cmd("waybar")
   hl.exec_cmd("mullvad-daemon")
+  hl.exec_cmd("eval $(ssh-agent)")
 end)
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
