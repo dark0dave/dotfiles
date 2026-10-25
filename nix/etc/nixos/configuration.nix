@@ -7,19 +7,23 @@
 }:
 {
   nixpkgs.overlays = [
-  (self: super: let
-    repo = super.fetchFromGitHub {
-      owner = "3l0w";
-      repo = "xdg-desktop-portal-hyprland";
-      rev = "feat/input-capture-impl";
-      sha256 = "sha256-UcuAsZtnT8LcYTiKpM7Mq9dySKeQUs4n5JU+BHkDfgU=";
-    };
-    in {
-      xdg-desktop-portal-hyprland = super.callPackage (repo + "/nix/default.nix") {
-        src = repo;
-        version = "feat/input-capture-impl";
-      };
-    })
+    (
+      self: super:
+      let
+        repo = super.fetchFromGitHub {
+          owner = "3l0w";
+          repo = "xdg-desktop-portal-hyprland";
+          rev = "feat/input-capture-impl";
+          sha256 = "sha256-UcuAsZtnT8LcYTiKpM7Mq9dySKeQUs4n5JU+BHkDfgU=";
+        };
+      in
+      {
+        xdg-desktop-portal-hyprland = super.callPackage (repo + "/nix/default.nix") {
+          src = repo;
+          version = "feat/input-capture-impl";
+        };
+      }
+    )
   ];
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
@@ -282,7 +286,7 @@
     dedicatedServer.openFirewall = false; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     gamescopeSession.enable = true;
-    extraCompatPackages = [pkgs.proton-ge-bin];
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

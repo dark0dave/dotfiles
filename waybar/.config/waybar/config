@@ -1,9 +1,10 @@
 {
   "layer": "top",
+  "reload_style_on_change": true,
   "modules-left": [
     "custom/arch",
     "gamemode",
-    "ext/workspaces",
+    "hyprland/workspaces",
     "cpu",
     "memory",
     "disk",
@@ -24,6 +25,27 @@
   "custom/arch": {
     "format": "🐧",
     "on-click": "rofi -show drun"
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "cursor": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces": {
+      "*": 10
+    }
   },
   "bluetooth": {
     "format": " {status}",
