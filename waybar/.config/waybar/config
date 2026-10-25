@@ -11,10 +11,10 @@
     "wlr/taskbar"
   ],
   "modules-center": [
-    "clock",
-    "mpris"
+    "clock"
   ],
   "modules-right": [
+    "mpris",
     "bluetooth",
     "wireplumber#sink",
     "wireplumber#source",
@@ -128,16 +128,17 @@
     "interval": 30,
     "format": "<span>🖴 {percentage_used}%</span>"
   },
-  "custom/playerctl": {
-    "format": "{icon} {0}",
-    "return-type": "json",
-    "hide-empty-text": false,
-    "max-length": 25,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}}:{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}'",
-    "interval": 15,
-    "format-icons": {
-      "Paused": "<span foreground='#bb9af7'>⏸</span>",
-      "Playing": "<span foreground='#bb9af7'>♫</span>"
-    }
+  "mpris": {
+    "format": "{status_icon} {title}",
+    "format-paused": "{status_icon} {title}",
+    "tooltip-format": "{player} ({status}) {dynamic}",
+    "status-icons": {
+      "playing": "▶",
+      "paused": "⏸",
+      "stopped": "⏸",
+    },
+    "ignored-players": [],
+    "title-len": 30,
+    "max-length": 35
   }
 }
