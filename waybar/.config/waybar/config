@@ -17,10 +17,10 @@
   ],
   "modules-right": [
     "mpris",
-    "bluetooth",
     "wireplumber#sink",
     "wireplumber#source",
     "battery",
+    "bluetooth",
     "network"
   ],
   "custom/arch": {
@@ -56,8 +56,8 @@
     }
   },
   "bluetooth": {
-    "format": " {status}",
-    "format-disabled": " off",
+    "format": "",
+    "format-disabled": "",
     "format-connected": " {num_connections} {device_battery_percentage}%",
     "format-connected-battery": " {num_connections} {device_alias} {icon} {device_battery_percentage}%",
     "format-icons": [
