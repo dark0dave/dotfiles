@@ -3,7 +3,6 @@
   "reload_style_on_change": true,
   "modules-left": [
     "custom/arch",
-    "custom/weather",
     "gamemode",
     "hyprland/workspaces",
     "cpu",
@@ -13,6 +12,7 @@
     "wlr/taskbar"
   ],
   "modules-center": [
+    "custom/weather",
     "clock"
   ],
   "modules-right": [
