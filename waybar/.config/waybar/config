@@ -3,6 +3,7 @@
   "reload_style_on_change": true,
   "modules-left": [
     "custom/arch",
+    "custom/weather",
     "gamemode",
     "hyprland/workspaces",
     "cpu",
@@ -25,6 +26,13 @@
   "custom/arch": {
     "format": "🐧",
     "on-click": "rofi -show drun"
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 60,
+    "exec": "wttrbar --nerd",
+    "return-type": "json"
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
