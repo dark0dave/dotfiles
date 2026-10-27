@@ -6,9 +6,6 @@ local message = new Mapping<String, Step> {
 }
 
 local builtins = new Mapping<String, Step> {
-  ["cargo-check"] = Builtins.cargo_check
-  ["cargo-clippy"] = Builtins.cargo_clippy
-  ["cargo-fmt"] = Builtins.cargo_fmt
   ["check-case-conflict"] = Builtins.check_case_conflict
   ["check-merge-conflict"] = Builtins.check_merge_conflict
   ["end-of-file-fixer"] = Builtins.newlines
@@ -16,8 +13,6 @@ local builtins = new Mapping<String, Step> {
   ["trailing-whitespace"] = Builtins.trailing_whitespace
   ["yamlfmt"] = Builtins.yamlfmt
 }
-
-local local_hooks = new Mapping<String, Step> {}
 
 hooks {
   ["commit-msg"] {
@@ -30,7 +25,6 @@ hooks {
     stash = "git"
     steps {
       ...builtins
-      ...local_hooks
     }
   }
 }
