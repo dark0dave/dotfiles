@@ -26,6 +26,7 @@
               nil
               nixfmt
               stow
+              yamlfmt
             ];
           };
         }

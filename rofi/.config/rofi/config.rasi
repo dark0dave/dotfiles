@@ -65,4 +65,3 @@ configuration {
 }
 
 @theme "~/.config/rofi/rounded-nord-dark.rasi"
-
