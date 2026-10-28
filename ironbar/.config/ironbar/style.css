@@ -1,0 +1,202 @@
+/* -- Dracula -- */
+@define-color bg #282a36;
+@define-color fg #f8f8f2;
+@define-color bg-alt #44475a;
+@define-color fg-alt #6272a4;
+@define-color cyan #8be9fd;
+@define-color green #50fa7b;
+@define-color orange #ffb86c;
+@define-color pink #ff79c6;
+@define-color purple #bd93f9;
+@define-color red #ff5555;
+@define-color yellow #f1fa8c;
+
+@define-color onedark_bg_color #282c34;
+@define-color onedark_bg_50_color rgba(40, 44, 52, 0.5);
+@define-color onedark_fg_color #abb2bf;
+@define-color onedark_fg_50_color rgba(171, 178, 191, 0.5);
+@define-color onedark_red_color #e06c75;
+@define-color onedark_red_50_color rgba(224, 108, 117, 0.5);
+@define-color onedark_orange_color #d19a66;
+@define-color onedark_orange_50_color rgba(209, 154, 102, 0.5);
+@define-color onedark_yellow_color #e5c07b;
+@define-color onedark_yellow_50_color rgba(229, 192, 123, 0.5);
+@define-color onedark_green_color #98c379;
+@define-color onedark_green_50_color rgba(152, 195, 121, 0.5);
+@define-color onedark_cyan_color #56b6c2;
+@define-color onedark_cyan_50_color rgba(86, 182, 194, 0.5);
+@define-color onedark_blue_color #61afef;
+@define-color onedark_blue_50_color rgba(97, 175, 239, 0.5);
+@define-color onedark_indigo_color #4B0082;
+@define-color onedark_indigo_50_color rgba(75, 0, 130, 0.5);
+@define-color onedark_violet_color #8F00FF;
+@define-color onedark_violet_50_color rgba(143, 0, 255, 0.5);
+@define-color transparent rgba(0,0,0,0);
+
+* {
+  border: none;
+  border-radius: 0;
+  border-image: none;
+  outline: none;
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  text-shadow: none;
+  color: inherit;
+}
+
+#bar {
+  background-color: rgba(0, 0, 0, 0);
+  color: @fg;
+  font-size: 14px;
+  font-family: "Ubuntu Mono Nerd Font", "Fira Code Nerd Font", "Iosevka Medium";
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  /* border-image: linear-gradient( */
+  /*     to bottom right, */
+  /*     @onedark_red_color, */
+  /*     @onedark_orange_color, */
+  /*     @onedark_yellow_color, */
+  /*     @onedark_green_color, */
+  /*     @onedark_cyan_color, */
+  /*     @onedark_blue_color, */
+  /*     @onedark_indigo_color, */
+  /*     @onedark_violet_color */
+  /*   ) */
+  /*   1; */
+  border-image-slice: 4;
+}
+
+#bar #end {
+  margin-right: 10px;
+}
+#bar #start {
+  margin-left: 10px;
+}
+
+.workspaces {
+  font-size: 20px;
+}
+.workspaces .item {
+  padding: 0px 3px;
+  background-color: @orange;
+  /* color: rgba(0, 0, 0, 0); */
+  color: @bg;
+  border: none;
+  border-radius: 77px;
+  border-bottom: 4px solid @purple;
+  margin: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.workspaces .item.focused {
+  background-color: @cyan;
+  color: @bg;
+}
+.workspaces .item:hover {
+  background-color: @pink;
+  color: @bg;
+  border-bottom: 2px solid @cyan;
+  border-right: 2px solid @cyan;
+  margin-bottom: 3px;
+  margin-right: 0px;
+}
+
+.popup {
+  background-color: @bg;
+  color: @fg;
+  border: 2px solid @purple;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.clock {
+  background-color: @bg;
+  font-size: 20px;
+  border: 2px solid @purple;
+  border-radius: 77px;
+}
+
+.focused {
+  border-radius: 77px;
+  border: 2px solid @orange;
+  background-color: @bg;
+}
+
+.launcher .item.urgent {
+  background-color: @pink;
+  border-radius: 77px;
+  border-bottom: 2px solid @red;
+}
+.popup-launcher .popup-item:hover {
+  border: 2px solid @cyan;
+  background-color: @bg-alt;
+}
+
+#power-btn {
+  background-color: @bg;
+  border-radius: 60px;
+  font-size: 20px;
+  color: @red;
+  border: 2px solid @red;
+}
+#power-btn:hover {
+  background-color: @red;
+  color: @bg;
+}
+
+.popup-power-menu #header {
+  background-color: @bg;
+  border-radius: 77px;
+  font-size: 20px;
+  color: @fg;
+  border-bottom: 2px solid @orange;
+  border-right: 2px solid @orange;
+  border-style: inset;
+}
+.popup-power-menu .power-btn {
+  background-color: @green;
+  border-radius: 77px;
+  font-size: 20px;
+  color: @bg;
+}
+
+.popup-power-menu .power-btn:hover {
+  background-color: @red;
+  color: @bg;
+  border: 2px solid @green;
+}
+
+#menu-btn {
+  background-color: @bg;
+  border-radius: 77px;
+  font-size: 20px;
+  color: @purple;
+  border: 2px solid @purple;
+}
+
+.music {
+  border-radius: 77px;
+  background-color: @bg;
+  border: 2px solid @cyan;
+}
+
+.popup-music .volume {
+  color: @cyan;
+}
+
+.popup-music .progress {
+  color: @cyan;
+}
+
+.clipboard {
+  border-radius: 77px;
+  background-color: @bg;
+  border: 2px solid @purple;
+}
+
+.tray {
+  background-color: @bg;
+  border-radius: 77px;
+  border: 2px solid @purple;
+}
