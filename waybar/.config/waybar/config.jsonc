@@ -1,0 +1,233 @@
+{
+  "layer": "top",
+  "reload_style_on_change": true,
+  "modules-left": [
+    "gamemode",
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "disk",
+    "network#speed"
+  ],
+  "modules-center": [
+    "custom/weather",
+    "clock"
+  ],
+  "modules-right": [
+    "mpris",
+    "wireplumber",
+    "bluetooth",
+    "network",
+    "battery"
+  ],
+  "hyprland/workspaces": {
+    "cursor": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces": {
+      "*": 10
+    }
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 60,
+    "exec": "wttrbar --nerd",
+    "return-type": "json"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-connected": " {num_connections} {device_battery_percentage}%",
+    "format-connected-battery": " {num_connections} {device_alias} {icon} {device_battery_percentage}%",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "format-no-controller": "",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "ghostty -e bluetui"
+  },
+  "network": {
+    "format-wifi": " {icon}",
+    "format-ethernet": "󰈀",
+    "format-icons": [
+      "󰤯 ",
+      "󰤟 ",
+      "󰤢 ",
+      "󰤢 ",
+      "󰤨 "
+    ],
+    "format-disconnected": "󰪎 ",
+    "interval": 5,
+    "tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "exec ~/.config/rofi/wifi/wifi.sh",
+    "on-click-right": "ghostty -e nmtui"
+  },
+  "ext/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate"
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate"
+  },
+  "clock": {
+    "format": "{:%c}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "max-length": 35,
+    "interval": 1
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": [
+        "󰢜 ",
+        "󰂆 ",
+        "󰂇 ",
+        "󰂈 ",
+        "󰢝 ",
+        "󰂉 ",
+        "󰢞 ",
+        "󰂊 ",
+        "󰂋 ",
+        "󰂅 "
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+    "format-full": "󰂅 ",
+    "format-alt": "{icon} ",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    }
+  },
+  "wireplumber#sink": {
+    "format": " <span color='#f7768e'>{icon}</span><span color='#ffff'>  {volume}% </span> ",
+    "format-muted": " 🔇 {volume}% ",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-click": "pwvucontrol || pavucontrol",
+    "scroll-step": 5
+  },
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": " <span color='#f7768e'>{icon}</span><span color='#ffff'> {volume}% </span> ",
+    "format-muted": "",
+    "format-icons": [
+      ""
+    ],
+    "on-click": "pwvucontrol || pavucontrol",
+    "scroll-step": 5
+  },
+  "wireplumber": {
+    "max-volume": 200,
+    "scroll-step": 5,
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-icons": [
+      "  ",
+      "   ",
+      "   "
+    ],
+    "format-muted": "   ",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click": "pwvucontrol || pavucontrol",
+    "tooltip": true,
+    "tooltip-format": "{volume}% | {desc}"
+  },
+  "network#speed": {
+    "interval": 1,
+    "format": "{ifname}%%",
+    "format-wifi": "<span color='#a6e3a1' >  </span>{bandwidthDownBytes} <span  color='#f38ba8'>  </span>{bandwidthUpBytes}",
+    "format-ethernet": "<span color='#a6e3a1' >  </span>{bandwidthDownBytes} <span  color='#f38ba8'>  </span>{bandwidthUpBytes}",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 22,
+    "min-length": 20,
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ]
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "<span color='#89b4fa' font='Font Awesome 6 Free-Solid'></span>  {usage}%",
+    "on-click": "ghostty -e btop"
+  },
+  "memory": {
+    "interval": 1,
+    "format": " <span color='#89b4fa'></span>  {percentage}%",
+    "on-click": "ghostty -e btop",
+    "tooltip-format": "{used}/{total} GiB"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "<span>  {percentage_used}%</span>"
+  },
+  "mpris": {
+    "format": "{status_icon} {title}",
+    "format-paused": "{status_icon} {title}",
+    "tooltip-format": "{player} ({status}) {dynamic}",
+    "status-icons": {
+      "playing": "▶",
+      "paused": "⏸",
+      "stopped": "⏸"
+    },
+    "ignored-players": [],
+    "title-len": 30,
+    "max-length": 35
+  }
+}
