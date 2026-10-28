@@ -1,6 +1,10 @@
 {
   "layer": "top",
-  "reload_style_on_change": true,
+  "position": "top",
+  "margin-left": 3,
+  "margin-right": 3,
+  "margin-top": 2,
+  "margin-bottom": 0,
   "modules-left": [
     "gamemode",
     "hyprland/workspaces",
@@ -15,6 +19,7 @@
   ],
   "modules-right": [
     "mpris",
+    "wireplumber#source",
     "wireplumber",
     "bluetooth",
     "network",
@@ -144,20 +149,8 @@
       "critical": 15
     }
   },
-  "wireplumber#sink": {
-    "format": " <span color='#f7768e'>{icon}</span><span color='#ffff'>  {volume}% </span> ",
-    "format-muted": " 🔇 {volume}% ",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
-    "on-click": "pwvucontrol || pavucontrol",
-    "scroll-step": 5
-  },
   "wireplumber#source": {
-    "node-type": "Audio/Source",
-    "format": " <span color='#f7768e'>{icon}</span><span color='#ffff'> {volume}% </span> ",
+    "format": "<span>{icon}</span>",
     "format-muted": "",
     "format-icons": [
       ""
@@ -176,7 +169,6 @@
       "   "
     ],
     "format-muted": "   ",
-    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click": "pwvucontrol || pavucontrol",
     "tooltip": true,
     "tooltip-format": "{volume}% | {desc}"
@@ -215,7 +207,7 @@
   },
   "disk": {
     "interval": 30,
-    "format": "<span>  {percentage_used}%</span>"
+    "format": "<span color='#89b4fa'></span>  {percentage_used}%"
   },
   "mpris": {
     "format": "{status_icon} {title}",

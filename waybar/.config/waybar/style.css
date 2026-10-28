@@ -1,175 +1,249 @@
 @import 'mocha.css';
 
 * {
-  background-color: @crust;
-  color: @text;
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: Inter, "Iosevka Nerd Font", sans-serif;
+  font-family: Iosevka Nerd Font;
+  min-height: 14px;
   font-size: 16px;
-  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
 }
 
+/* General Styling */
+tooltip,
+menu,
+#workspaces,
+#clock,
+#wireplumber,
+#wireplumber#source
+#backlight,
+#bluetooth,
+#network,
+#battery,
+#custom-power {
+  background: @crust;
+  padding: 7px 8px;
+  margin: 0;
+  border-radius: 6px;
+}
 
-.modules-left {}
-
-.modules-right {}
-
+/* Workspace */
 #workspaces {
-  border-radius: 0px;
-  margin-right: 10px;
+  background: @crust;
+  margin: 0;
+  margin-left: 3px;
+  padding: 0;
+  font-weight: bold;
+  font-style: normal;
+  opacity: 1;
+  font-size: 20px;
+  border-radius: 6px;
 }
 
 #workspaces button {
-  all: initial;
-  padding: 0 8px;
-  margin: 0 2px;
+  padding: 0px 3px;
+  margin: 3px;
+  border-radius: 6px;
+  border: none;
+  /* transition: all 0.2s ease-in-out; */
+  opacity: 0.8;
 }
 
-#workspaces button label {
-  color: @text;
-}
-
-#workspaces button.active label {
-  color: @text;
-  border-bottom: 2px solid white;
-  padding: 0 5px;
-}
-
-#tray {
-  min-width: 0px;
-  transition: min-width 0.2s ease, opacity 0.2s ease;
-  opacity: 0;
-}
-
-#tray:hover {
-  min-width: 150px;
+#workspaces button.active {
+  color: #1e1e2e;
+  background: #cba6f7;
+  min-width: 20px;
   opacity: 1;
 }
 
-#tray,
-#cpu,
-#disk
-#network,
-#pulseaudio {
-  min-width: 12px;
-  margin: 0 7.5px;
+#workspaces button:hover {
+  color: @text;
+  background: @crust;
+  opacity: 1;
+  animation: none;
 }
 
-
-#clock {
-  padding: 0 10px;
+/* #workspaces button:not(.active) {
+  color: #74c7ec;
 }
-
-#custom-arch {
-  min-width: 20px;
-  margin: 0px 10px 0px 6px;
-  font-size: 18px;
-  color: @blue;
+#workspaces button:nth-child(1):not(.active) {
+  color: #f38ba8;
 }
-
-#custom-expand-icon {
-  margin-right: 7px;
+#workspaces button:nth-child(2):not(.active) {
+  color: #f9e2af;
 }
+#workspaces button:nth-child(3):not(.active) {
+  color: #a6e3a1;
+} */
 
-tooltip {
-  font-family: Inter, "Ubuntu Mono Nerd Font", sans-serif;
-  padding: 2px;
-}
-
-
-.hidden {
-  opacity: 0;
-}
-
-#custom-seperator {
-  color: @surface2;
-}
-
+/* Cpu */
 #cpu {
   color: @text;
-  margin-right: 10px;
+  padding: 0px 8px 0px 15px;
+  background: @crust;
+  margin-left: 2px;
+  border-radius: 6px 0 0 6px;
 }
 
-#custom-transparency {
-  font-size: 15px;
-  margin-right: 8;
-  margin-left: 8;
-  color: @green;
-}
-
-#custom-wallpaper {
-  font-size: 15px;
-  margin-right: 10px;
-  margin-left: 8px;
-  color: @blue;
-}
-
-
-#custom-gh {
-  margin-right: 10px;
-  margin-left: 10px;
-  font-size: 8px;
-}
-
+/* Memory */
 #memory {
   color: @text;
-  margin-right: 10px;
+  padding: 0px 15px 0px 8px;
+  background: @crust;
+  margin-right: 1px;
+  border-radius: 0 6px 6px 0;
 }
 
-
-#temperature.gpu {
-  color: @text;
-  margin-left: 6px;
-}
-
-#backlight {
-  color: @lavender;
-  margin-right: 10px;
-}
-
-#wireplumber {
-  color: @lavender;
-}
-
-#network {
-  color: @lavender;
-  margin-right: 10px;
-}
-
+/* Network Speed */
 #network.speed {
+  background: @crust;
+  padding: 0px 6px;
+  min-width: 10px;
   color: @text;
+  border-radius: 6px;
 }
 
-#battery {
-  padding: 0 8px;
+/* Clock */
+#clock {
+  padding: 0 15px;
+  color: @text;
+  border-radius: 6px;
+}
+
+/* Window Hyprland */
+window#waybar {
+  border-radius: 6px;
+  padding: 2px;
+  box-shadow: none;
+}
+
+#window {
+  color: @text;
+  background: @crust;
+  padding: 6px;
+  margin: 0px 2px;
+}
+
+/* Github Heatmap */
+#custom-gh {
+  /* color: #39d353; */
+  background: @crust;
+  border-radius: 6px;
+  margin-right: 2px;
+  padding: 0px 8px;
+}
+
+/* #custom-gh .empty { */
+/* color: #161b22; */
+/* } */
+
+/* GPU or CPU Temp */
+#temperature.gpu {
+  padding: 0px 12px;
   margin-left: 2px;
+  margin-right: 2px;
+  color: @green;
+  background: @crust;
+  border-radius: 6px;
+}
+
+/* Transparency */
+#custom-transparency {
+  font-size: 18px;
+  background: @crust;
+  color: #94e2d5;
+  padding: 0px 10px;
+  margin-right: 2px;
+  border-radius: 6px;
+  /* border-radius: 6px 0 0 6px; */
+  /* border-radius: 0 6px 6px 0; */
+}
+
+/* Wallpaper */
+#custom-wallpaper {
+  font-size: 20px;
+  font-family: 'Font Awesome 5 Free';
+  padding: 0px 8px;
+  margin-right: 1px;
+  color: #f38ba8;
+  background: @crust;
+  /* border-radius: 0 6px 6px 0; */
+  border-radius: 6px;
+}
+
+/* Audio and Brightness */
+#wireplumber,
+#wireplumber#source,
+#backlight {
+  padding: 0 8px;
+  margin: 0 1px;
+  color: @beige;
+  border-radius: 6px 6px;
+}
+
+#bluetooth,
+#network {
+  color: #cba6f7;
+  border-radius: 6px;
+  margin: 0 1px;
+}
+
+/* Wifi */
+#network {
+  min-width: 30px;
+  padding: 0 7px 0 2px;
+  /* margin: 0 2px; */
+  border-radius: 6px;
+  /* border-radius: 0 6px 6px 0; */
+}
+
+/* Battery */
+#battery {
+  color: @mint;
+  min-width: 30px;
+  padding-left: 5px;
+  margin-left: 1px;
+  margin-right: 3px;
+  /* margin: 0 1px; */
+  padding-right: 5px;
+  border-radius: 6px;
 }
 
 #battery.charging {
-  color: @mantle;
-  background: #a6e3a1;
+  color: #a6e3a1;
+  /* Text */
+  background: @crust;
+  border-radius: 6px;
 }
 
 #battery.good:not(.charging) {
-  background: #74c7ec;
-  color: @mantle;
+  color: #74c7ec;
+  background: @crust;
+  border-radius: 6px;
 }
 
 #battery.warning:not(.charging) {
-  background: #74c7ec;
-  color: @mantle;
+  color: #74c7ec;
+  /* Text */
+  background: @crust;
+  border-radius: 6px;
 }
 
 #battery.low:not(.charging) {
-  background: #f38ba8;
-  color: @mantle;
+  color: #f38ba8;
+  /* Text */
+  background: @crust;
+  border-radius: 6px;
 }
 
 #battery.critical:not(.charging) {
-  background: #f38ba8;
-  color: @mantle;
+  color: #f38ba8;
+  /* Text */
+  background: @crust;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;
@@ -181,6 +255,36 @@ tooltip {
 @keyframes blink {
   to {
     color: #f38ba8;
+    /* Red */
     background: #f2cdcd;
+    /* Text */
   }
+}
+
+/* Some Modules that I am not using right now */
+#custom-cava {
+  color: #cba6f7;
+  border-left: 0px;
+  border-right: 0px;
+  padding: 6px;
+  font-family: 'bargraph';
+  background: @crust;
+  margin: 0px 2px;
+}
+
+#custom-launcher {
+  font-size: 18px;
+  transition: none;
+  padding: 0px 10px;
+  margin-right: 2px;
+  background: @crust;
+  color: rgba(137, 220, 235, 1);
+  border-radius: 0 6px 6px 0;
+}
+
+#bluetooth {
+  min-width: 20px;
+  padding: 0 10px;
+  margin: 0 2px;
+  border-radius: 6px;
 }
