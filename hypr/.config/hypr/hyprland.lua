@@ -97,11 +97,14 @@ hl.config({
 ----------------
 ----  MISC  ----
 ---------------
--- See https://wiki.hypr.land/Configuring/Basics/Variables/#misc for more
+-- See https://wiki.hypr.land/configuring/core/config-options/#misc for more
 hl.config({
     misc = {
+        bell_sound                 = "none",
         force_default_wallpaper    = 0,
         disable_hyprland_logo      = true,
+        disable_splash_rendering   = true,
+        disable_watchdog_warning   = true,
         middle_click_paste         = false,
         focus_on_activate          = false,
         initial_workspace_tracking = 1,
